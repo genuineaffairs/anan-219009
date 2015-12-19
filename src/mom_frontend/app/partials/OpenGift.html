@@ -1,0 +1,42 @@
+<div class="container">
+
+
+
+    <div class="main no-background">
+        
+    </div>
+
+    <div class="modalBg"
+         data-ng-class="{'on':modal}"></div>
+    
+    <div class="modal modal-post" data-ng-class="{'on': modalLoginRequired}">
+        <p>Please create an account or login to your account to receive your gift</p>
+        <div class="button-group">
+            <a href="#/Login" class="btn btn-secondary">Done</a>
+        </div>
+    </div>
+
+    
+    <div class="modal modal-post" data-ng-class="{'on': modalError}">
+
+        <p>{{errorText}}</p>
+
+        <div class="button-group">
+            <a href="#/" class="btn btn-secondary">Done</a>
+        </div>
+    </div>
+
+    <div class="modal modal-post modal-twitter" data-ng-class="{'on': loginTwitter}">
+
+        <p>Please authenticate with Twitter to receive your gift</p>
+
+        <a href="javascript:" class="twitter textbox" ng-click="loginWithTwitter()">
+            <span class="icon-twitter"></span>Login with Twitter
+        </a>
+
+        <div class="button-group">
+            <a href="#/" class="btn btn-secondary">Cancel</a>
+        </div>
+    </div>
+
+</div>

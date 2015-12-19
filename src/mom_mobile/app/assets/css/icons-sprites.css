@@ -1,0 +1,136 @@
+/* icon sprites */
+.sprite { background: url('../i/icons.png') no-repeat top left;  }
+
+/* for retina screen */
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+    .sprite {
+        background-image: url('../i/icons-x2.png');
+        background-size: 963px 608px;
+    }
+}
+
+/* blue tick */
+.sprite-blue-tick {
+    width: 12px;
+    height: 9px;
+    background-position: 0 0;
+}
+
+/* step 3 confirm  icon */
+.sprite-confirm {
+    width: 77px;
+    height: 35px;
+    background-position: -12px -9px;
+}
+
+/* step 1 enter receipt total icon */
+.sprite-enter-receipt-total {
+    width: 77px;
+    height: 35px;
+    background-position: -89px -44px;
+}
+
+/* facebook active icon */
+.sprite-facebook {
+    width: 41px;
+    height: 40px;
+    background-position: -166px -79px;
+}
+
+/* facebook grey icon */
+.sprite-facebook-grey {
+    width: 41px;
+    height: 40px;
+    background-position: -207px -119px;
+}
+
+/* green tick, used by alert box */
+.sprite-green-tick {
+    width: 29px;
+    height: 23px;
+    background-position: -248px -159px;
+}
+
+/* grey person icon, used by username text field */
+.sprite-grey-person {
+    width: 10px;
+    height: 15px;
+    background-position: -277px -182px;
+}
+
+/* hamburger menu icon */
+.sprite-hamburger-menu {
+    width: 19px;
+    height: 19px;
+    background-position: -287px -197px;
+}
+
+/* linkedin active icon */
+.sprite-linkedin {
+    width: 40px;
+    height: 39px;
+    background-position: -306px -216px;
+}
+
+/* linkedin grey icon */
+.sprite-linkedin-grey {
+    width: 40px;
+    height: 39px;
+    background-position: -346px -255px;
+}
+
+/* lock icon, used by password field */
+.sprite-lock {
+    width: 10px;
+    height: 15px;
+    background-position: -386px -294px;
+}
+
+/* step 2 scan qr code icon */
+.sprite-scan-qr-code {
+    width: 66px;
+    height: 40px;
+    background-position: -396px -309px;
+}
+
+/* horizontal splitter with shadow */
+.sprite-shadow-hspliter {
+    width: 300px;
+    height: 8px;
+    background-position: -462px -349px;
+}
+
+/* twitter icon active */
+.sprite-twitter {
+    width: 41px;
+    height: 40px;
+    background-position: -762px -357px;
+}
+
+/* twitter icon grey */
+.sprite-twitter-grey {
+    width: 41px;
+    height: 40px;
+    background-position: -803px -397px;
+}
+
+/* white tick in green circle*/
+.sprite-white-tick {
+    width: 12px;
+    height: 10px;
+    background-position: -844px -437px;
+}
+
+/* founder icon */
+.sprite-founder {
+    width: 54px;
+    height: 81px;
+    background-position: -856px -447px;
+}
+
+/* champion icon */
+.sprite-champion {
+    width: 53px;
+    height: 80px;
+    background-position: -910px -528px;
+}

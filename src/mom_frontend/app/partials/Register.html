@@ -1,0 +1,114 @@
+<div class="container landing">
+
+  <div class="main modal-static">
+      <div class="modal modal-register" data-ng-class="{'on':modal}">
+        <h2>Register</h2>
+        <p data-ng-if="showError" class="text-danger">{{errorMessage}}</p>
+        <div class="bar" data-ng-if="!isAddBusiness">
+            <dl>
+            <dt>Sign in with your Social Account</dt>
+            <dd><a href="javascript:;" class="icon icon-f" data-ng-click="registerWithSocialNetwork(socialNetworks.facebook)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-t" data-ng-click="registerWithSocialNetwork(socialNetworks.twitter)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-in" data-ng-click="registerWithSocialNetwork(socialNetworks.linkedin)"></a></dd>
+          </dl>
+        </div>
+        <!-- End .bar -->
+        <form class="form" name="form">
+            <p data-ng-if="!isAddBusiness">Or Create a New Account</p>
+          <div class="form-group first">
+            <label>Account Type</label>
+            <div id="account_type" dropdown-select="accountTypes" dropdown-model="accountType" dropdown-item-label="value" data-ng-if="!isAddBusiness"></div>
+            <div class="wrap-dd-select" data-ng-if="isAddBusiness"><span class="selected">{{accountType.value}}</span></div>
+          </div>
+          <div class="form-group" data-ng-if="!isAddBusiness && accountType.name === 'FOUNDER'">
+            <label>&nbsp;</label>
+            <div><a href="javascript:;" data-ng-click="goToLogin()" data-ng-if="!isAddBusiness">Signup With FounderShare champion account </a></div>
+          </div>
+          <!-- End .form-group -->
+          <div class="form-group">
+            <label for="first">First Name</label>
+            <input type="text" name="first" id="first"
+                data-ng-model="user.firstName"
+                   data-ng-disabled="isAddBusiness"
+              data-ng-class="{'error':submitted && form.first.$error.required}"
+              required="required" />
+          </div>
+          <!-- End .form-group -->
+          <div class="form-group">
+            <label for="last">Last Name</label>
+            <input type="text" name="last" id="last"
+                data-ng-model="user.lastName"
+                   data-ng-disabled="isAddBusiness"
+              data-ng-class="{'error':submitted && form.last.$error.required}"
+              required="required" />
+          </div>
+          <div class="form-group" data-ng-if="accountType.name === 'FOUNDER'">
+            <label for="last">Business Name</label>
+            <input type="text" name="user.businessName" id="business-name"
+                data-ng-model="user.businessName"
+              data-ng-class="{'error':submitted && form.businessName.$error.required}"
+              required="required" />
+          </div>
+          <div class="form-group" data-ng-if="accountType.name === 'FOUNDER'">
+            <label for="last">Business Type</label>
+            <div id="business_type" dropdown-select="businessTypes" dropdown-model="businessType" dropdown-item-label="name"></div>
+          </div>
+          <!-- End .form-group -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email"
+                data-ng-model="user.email" data-ng-disabled="isAddBusiness"
+              data-ng-class="{'error':submitted && form.email.$invalid}"
+              required="required"
+              data-ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/" />
+          </div>
+          <!-- End .form-group -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"
+                data-ng-model="user.password" data-ng-disabled="isAddBusiness"
+              data-ng-class="{'error':submitted && form.password.$error.required}"
+              required="required" />
+          </div>
+          <!-- End .form-group -->
+          <div class="form-group" flow-init="{singleFile:true}" flow-file-added="setFile($file)">
+            <label for="photo">{{accountType.name === 'FOUNDER' ? 'Upload Logo': 'Upload Profile Photo'}} (Optional)</label>
+            <input type="text" id="photo" class="file"  name="file"
+                data-ng-model="$flow.files[0].name"
+              data-ng-class="{'error':submitted && form.file.$invalid}"
+              readonly="readonly" />
+            <a href="javascript:;" class="btn btn-secondary"
+                flow-attrs="{accept:'image/*'}"
+              flow-btn>Browse</a>
+          </div>
+          <!-- End .form-group -->
+	  <div class="form-group checkbox">
+                <input type="checkbox" id="subscribedToNews"
+                data-ng-model="subscribedToNews" />
+              <label for="subscribedToNews">Subscribe me to Founder$hare newsletters</label>
+          </div>
+	  <!-- End .form-group -->
+          <div class="form-group checkbox">
+                <input type="checkbox" id="accept"
+                data-ng-model="accept" />
+              <label for="accept">I accept</label> <a ng-click="openTerms()" href="javascript:">the Terms &amp; Conditions</a>
+          </div>
+          <!-- End .form-group -->
+          <div class="btn-group">
+          <a href="javascript:;" class="btn btn-primary btn-register"
+            data-ng-class="{'disabled':!(accept)}"
+            data-ng-click="register(user)" data-ng-if="!isAddBusiness">Register</a>
+          <a href="javascript:;" class="btn btn-primary btn-register"
+            data-ng-class="{'disabled':!(accept)}"
+            data-ng-click="addBusiness(user)" data-ng-if="isAddBusiness">Register</a>
+          </div>
+          <a href="#/Login" class="link">Are you a registered user?</a>
+        </form>
+        <!-- End .form -->
+      </div>
+  </div>
+  <!-- End .main -->
+
+</div>
+<!-- End .container -->
+<ng-include src="'partials/module/complete-registration.html'"></ng-include>

@@ -1,0 +1,118 @@
+<div class="cart gifting">
+
+    <div class="main no-background">
+
+        <div class="button-group top">
+            <a href="javascript:" class="btn btn-medium twitter" ng-click="showTwitterFriends()">
+                <span class="icon-twitter"></span>Send to friend
+            </a>
+            <a href="javascript:;" class="btn btn-secondary btn-medium" ngc-submit-form="'#gifterForm'">Gift Now</a>
+        </div>
+        <!-- End .button-group -->
+
+        <h2>Founder$hare Gifting</h2>
+
+        <div class="data">
+            <form id="gifterForm" ng-submit="giftNow()" name="gifterForm">
+                <table>
+                <thead>
+                <tr>
+                    <th class="business">Business</th>
+                    <th class="available">Available</th>
+                    <th class="amount">Gift Amount</th>
+                    <th class="recipient">Recipient</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-visible="giftCard">
+                    <td>
+                        <div class="business-info">
+                            <div class="logo"><img src="../i/image.jpg" data-ng-src="{{offer.businessPicture}}"
+                                                   alt="Pic"/></div>
+                            <!-- End .logo -->
+                            <a href="javascript:;" class="link">{{offer.businessName}}</a>
+                        </div>
+                        <!-- End .business-info -->
+                    </td>
+                    <td><span>{{giftCard.quantity | currency:"$ ":2}}</span></td>
+                    <td>
+		      <div data-slider class="slider" data-ng-if="giftCard"
+			   data-ng-model="gift.amount"
+			   max="giftCard.quantity" min="1"></div>
+		      <span>$ </span>
+		      <input required="required" name="amount" type="number" data-ng-model="gift.amount"
+			     max="{{giftCard.quantity}}" min="1" required="required"/>
+		    </td>
+                    <td class="recipient" colspan="2">
+                        <div ng-if="!selectedTwitterFriend">
+                            <input type="text" class="target textbox" required="required"  name="target" placeholder="Email" ng-model="target.value" ngc-email-or-phone> <br/>
+                            <div class="gift-msg-label">Gift Message (optional)</div>
+                            <textarea class="gift-message" data-ng-model="extraMessage.value" placeholder="Type message..."></textarea>
+                        </div>
+                        <div ng-show="selectedTwitterFriend" class="selected-friend">
+                            <input type="text" class="target textbox" value="{{selectedTwitterFriend.name}}" disabled="disabled " />
+                            <a href="javascript:" class="twitter ">
+                                <span class="icon-twitter"></span>
+                            </a>
+                            <a href="javascript:" ng-click="deselectTwitterUser()"><img class="close-icon" src="../i/close.png" alt="close" ></a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+        <!-- End .data -->
+        <div class="total">TOTAL<span>{{gift.amount | currency:'$ ':2}}</span></div>
+
+        <div class="button-group">
+            <a href="javascript:" class="btn btn-medium twitter" ng-click="showTwitterFriends()">
+                <span class="icon-twitter"></span>Send to friend
+            </a>
+            <a href="javascript:;" class="btn btn-secondary btn-medium" ngc-submit-form="'#gifterForm'">Gift Now</a>
+        </div>
+        <!-- End .button-group -->
+
+        <a href="#/Founder$hares" class="btn btn-gray btn-small">Cancel</a>
+    </div>
+    <!-- End .main -->
+
+    <div class="modalBg"
+         data-ng-class="{'on':modalDone}"></div>
+
+
+    <div class="choose-twitter-friend" ng-if="twitterModal">
+        <h2 class="font-size48">CHOOSE TWITTER FRIEND</h2>
+        <div class="choose-twitter-friend__body">
+            <a href="javascript:" ng-click="closeTwitterModal()"><img class="close-icon" src="../i/close.png" alt="close" ></a>
+            <div class="table-scroll">
+            <table>
+                <tbody>
+                    <tr ng-repeat="user in twitterResponse.users">
+                        <td><img ng-src="{{user.profile_image_url_https}}"/></td>
+                        <td>{{user.name}}</td>
+                        <td><a class="btn btn-primary" href="javascript:" ng-click="selectTwitterFriend(user)">select</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="paginator">
+                <a class="btn btn-primary prev" href="javascript:" ng-if="twitterResponse.previous_cursor" ng-click="showFriendPage(twitterResponse.previous_cursor)">Previous page</a>
+                <a class="btn btn-primary next" href="javascript:" ng-if="twitterResponse.next_cursor" ng-click="showFriendPage(twitterResponse.next_cursor)">Next page</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-post" data-ng-class="{'on': modalDone}">
+        <p>Your friend is going to be very excited! Way to go, champ!</p>
+
+        <div class="bar">
+            <ngc-auto-share share-category="'gifted card'" share-text="shareText" share-text-tw="shareTextTw"></ngc-auto-share>
+        </div>
+        <div class="button-group">
+            <a href="#/Founder$hares" ngc-fire-auto-share class="btn btn-primary btn-medium">Done</a>
+        </div>
+    </div>
+
+</div>
+<!-- End .container -->

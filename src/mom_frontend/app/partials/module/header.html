@@ -1,0 +1,49 @@
+<div class="header-content" data-ng-class="{stick: header.stick, expanded: header.stickExpanded}">
+<div class="navs-header">
+    <div class="container-wide">
+    <h1><a href="#/"><img src="../../i/logo-header.png" alt="Believe in the furture"/></a></h1>
+    <ul>
+        <li><a href="#/ProvideFeedback" class="feedback">Feedback</a></li>
+        <!-- TEMPORARY: [PMP-178]
+        <li><a href="#/ShoppingCart" data-ng-if="isUser" class="mycart">My Cart<span class="badge">{{util.getCartItemNumber()}}</span></a></li> -->
+        <li data-ng-if="util.isLoggedIn()"><a href="javascript:;" class="myprofile" data-ng-click="goUser()">My
+            Profile</a></li>
+        <li><a href="javascript:;" class="logout" data-ng-click="role.switch()" data-ng-if="role.hasDualRoles()">Toggle to {{role.nextRole()}}</a></li>
+        <li><a href="#/Register" class="logout"  data-ng-if="isUser && !role.hasDualRoles()">Signup as Business Owner</a></li>
+        <li data-ng-if="util.isLoggedIn()"><a href="javascript:;" class="logout" data-ng-click="logout()">Log Out</a>
+        </li>
+        <li data-ng-if="!util.isLoggedIn()"><a href="javascript:;" class="login" data-ng-click="login()">Log In</a></li>
+        <li data-ng-if="header.stick">
+            <a href="javascript:;" class="expand"
+               data-ng-click="header.stickExpanded = !header.stickExpanded"></a>
+        </li>
+    </ul>
+    </div>
+</div>
+<!-- End .navs-header -->
+<div class="main-navs">
+    <div class="container-wide">
+    <nav class="main-navs">
+        <ul>
+            <li><a href="#/Home" data-ng-class="{active: header.page == 'home'}">HOME</a></li>
+            <li><a href="{{ staticUrls.about_us }}" data-ng-class="{active: header.page == 'about'}">ABOUT</a></li>
+            <li><a href="{{ staticUrls.blog }}" data-ng-class="{active: header.page == 'blog'}">BLOG</a></li>
+            <li><a href="{{ staticUrls.faq }}" data-ng-class="{active: header.page == 'faq'}">FAQ</a></li>
+            <li><a href="{{ staticUrls.how_it_works }}" class="how-it-works-link" data-ng-class="{active: header.page == 'howItWorks'}">HOW IT WORKS</a></li>
+        </ul>
+    </nav>
+        <div class="form-group">
+            <div class="input-group">
+                <form novalidate name="searchForm" ng-submit="doSearch()">
+                    <input type="text" class="input-control" placeholder="Keyword" data-ng-model="search.name" />
+                    <button ng-show="false"></button>
+                </form>
+                <input type="text" class="input-control" placeholder="Location" id="searchLocation" data-ng-model="search.address" />
+                <div class="dark" dropdown-select="search.allTypes" dropdown-model="search.type" dropdown-onchange="typeChanged()" dropdown-item-label="name"></div>
+                <a href="javascript:" ng-click="doSearch()" class="icon icon-search"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End .main-navs -->
+</div>

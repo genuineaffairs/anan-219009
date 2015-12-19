@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+   head
+      title Gift
+body
+   #container
+      | !{extraMessage}
+      | Hi,
+      br
+      br
+      | It’s your lucky day! #{giverName} has just given you a FounderShare gift card for $#{amount} at #{businessName}.
+      | <a href="#{url}">Click here to activate the gift card so you can redeem it.</a>
+      br
+      br
+      | Cheers!
+      br
+      | The FounderShare Team & #{giverEmail}
+     

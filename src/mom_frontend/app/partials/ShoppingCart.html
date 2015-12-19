@@ -1,0 +1,122 @@
+<div class="container" ng-class="{cart: view ==='cart', payment: view === 'payment'}">
+
+
+    <div class="main no-background" ng-if="view === 'payment'">
+        <h2>Payment: ${{ totalPrice | number: 2 }}</h2>
+
+        <div class="form">
+            <form method="post">
+                <div id="dropin-container"></div>
+                <div class="controls float-right">
+                    <a href="#/Home" class="btn btn-gray btn-medium">Cancel</a>
+                    <button type="submit" class="btn btn-secondary btn-medium">Pay Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="main no-background" ng-if="view === 'cart'">
+        <h2>Shopping Cart</h2>
+
+        <div class="button-group">
+            <a href="#/Home" class="btn btn-primary">Continue Browsing</a>
+            <a href="javascript:;" class="btn btn-secondary" data-ng-click="pay()">Pay Now</a>
+        </div>
+        <!-- End .button-group -->
+        <div class="data">
+            <table>
+                <thead>
+                <tr>
+                    <th class="shares">Founder$hares</th>
+                    <th class="available">Available</th>
+                    <th class="discount">Discount</th>
+                    <th class="value">Total Value</th>
+                    <th class="price">Price</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="item in offers">
+                    <td>
+                        <div class="business-info">
+                            <div class="logo"><img src="../i/image.jpg" data-ng-src="{{item.businessPicture}}"
+                                                   alt="Pic"/></div>
+                            <!-- End .logo -->
+                            <a href="javascript:;" class="link">{{item.businessName}}</a>
+
+                            <div class="activation">Activation : {{item.activationDateTime | date:'MM/dd/yyyy h:mm a'}}
+                            </div>
+                            <div class="info-bottom">
+                                <div class="discount">
+                                    {{item.discount}}%<span>off</span>
+                                </div>
+                                <div class="date">{{item.expirationDate | date:'MM/dd/yyyy h:mm a'}}</div>
+                                <div class="percent">
+                                    <div class="shopping-cart-item circle-gauge" data-ng-init="gauge = getGauge(item)" data-ng-include="'partials/gauge.svg'"></div>
+                                    ${{item.availableQuantity}}
+                                    <small>remain</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End .business-info -->
+                    </td>
+                    <td><span>${{item.availableQuantity}}</span></td>
+                    <td><span>{{item.discount}}%</span></td>
+                    <td><span>$ </span><input data-ng-class="{error: item.invalid}" type="text" data-ng-model="item.value"
+                                              data-ng-focus="item.invalid = false"
+                               max-number="item.availableQuantity" min-number="0" required="required"/></td>
+                    <td><span>${{(item.value || 0)*(100-item.discount) / 100 | number:2}}</span></td>
+                    <td><a href="javascript:;" class="btn btn-primary"
+                           data-ng-click="delete(item)">Cancel</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- End .data -->
+        <div class="total">TOTAL<span>${{getTotal() | number:2}}</span></div>
+    </div>
+    <!-- End .main -->
+
+    <div class="modalBg"
+         data-ng-class="{'on':modal}"
+         data-ng-click="closeModal()"></div>
+    <div class="modal modal-pay" data-ng-class="{'on':unLoginModal}">
+        <p>You need to be logged in to buy Founder$hares</p>
+
+        <div class="button-group">
+            <a href="#/Login" class="btn btn-secondary">Login</a>
+            <a href="javascript:;" class="btn btn-primary" data-ng-click="cancel()">Cancel</a>
+        </div>
+    </div>
+
+    <div class="modal modal-post" data-ng-class="{'on': modal}">
+        <p data-ng-if="nextSteps" class="detail-text">Ready to redeem? Your Founder$hare mobile gift card is already stored in your phone.</p>
+        <p data-ng-if="nextSteps" class="detail-text">You can view it anytime by going to <a href data-ng-click="goto('/')">foundershare.com</a> from your phone, not only when you want to redeem one.</p>
+        <p data-ng-if="nextSteps" class="detail-text">When you're ready to redeem:</p>
+        <ol data-ng-if="nextSteps" class="detail-text">
+          <li>1. Go to the store</li>
+          <li>2. Go to <a href data-ng-click="goto('/')">foundershare.com</a> on your mobile</li>
+          <li>3. Click Redeem</li>
+        </ol>
+        <p data-ng-if="nextSteps" class="detail-text">That's it! Your gift card balance will automatically update.</p>
+        <p data-ng-if="nextSteps" class="detail-text">Want to send a gift? No problem! You can do this anytime from "My Founder$hares" found in your profile or by <a href data-ng-click="goto('/Founder$hares')">clicking here</a></p>
+        <p data-ng-if="!nextSteps">Congrats Champ! Your gift card has been purchased. What will you buy with it? ;)</p>
+        <p data-ng-if="!nextSteps">Wondering what to do next?</p>
+
+        <h4 data-ng-if="!nextSteps">Help spread the word</h4>
+
+        <div data-ng-if="!nextSteps" class="bar">
+            <ngc-auto-share share-category="shareCategory" share-text="shareText" share-text-tw="shareTextTw"></ngc-auto-share>
+        </div>
+        <div class="button-group">
+            <a ng-click="closeModal()" ngc-fire-auto-share class="btn btn-secondary">Done</a>
+
+        </div>
+        <div class="button-group next-steps">
+          <a data-ng-click="showNextSteps()" data-ng-if="!nextSteps" class="btn btn-secondary">Learn How To Redeem</a>
+        </div>
+    </div>
+
+</div>
+<!-- End .container -->

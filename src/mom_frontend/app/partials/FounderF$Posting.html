@@ -1,0 +1,232 @@
+<div class="container posting">
+
+  <div class="main no-background">
+  	<h2>Founder$hare Posting</h2>
+    <div class="button-group">
+    	<a href="javascript:;" class="btn btn-secondary btn-save" ngc-submit-form="'#founderForm'">Save</a>
+      <a href="#/Founder$hares" class="btn btn-primary">Cancel</a>
+    </div>
+    <!-- End .button-group -->
+    <form class="form" name="form" novalidate ng-submit="save()" id="founderForm">
+    	<div  ng-if="cardOffer">
+        <div class="business-info">
+          <div class="logo"><img src="../i/image.jpg" data-ng-src="{{business.picture}}" alt=""  /></div>
+          <!-- End .logo -->
+          <a href="javascript:;" class="link">{{business.name}}</a>
+          <div class="activation">Activation : {{cardOffer.activationDateTime | date:longDateFormat}}</div>
+          <div class="info-bottom">
+            <div class="discount">
+              {{cardOffer.discount || 0}}%<span>off</span>
+            </div>
+            <div class="date">Gift Card Never Expires</div>
+            <div class="left radial-progress percent" data-progress="{{progress}}">
+              <div class="circle">
+                <div class="circle-gauge" data-ng-init="gauge = getGauge()" data-ng-include="'partials/gauge.svg'"></div>
+              </div>
+              <div class="inset">
+                <div class="percentage">
+                  <p><span>$</span><span class="progress">{{cardOffer.totalQuantity - spentQuantity}}</span></p>
+                  <p>remain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End .business-info -->
+        <div class="tip info">
+          <div class="inner">
+            <div class="form-group">
+              <label>Business</label>
+              <input type="text" value="{{business.name}}" readonly/>
+            </div>
+            <!-- End .form-group -->
+            <div class="form-group">
+              <label>Business Type</label>
+              <input type="text" value="{{businessTypeIndex[business.type].name}}" readonly/>
+            </div>
+            <!-- End .form-group -->
+            <div class="form-group">
+              <label>Business Location</label>
+              <input type="text" value="{{businessAddress}}" readonly/>
+            </div>
+            <!-- End .form-group -->
+            <div class="form-group">
+              <label>Business telephone</label>
+              <input type="text" value="{{business.telephoneNumber}}" readonly/>
+            </div>
+          </div>
+        </div>
+        <!-- End .tip -->
+        <div class="tip discount">
+          <div class="inner">
+            <div class="form-group">
+              <label for="discount">Founder$hare Discount</label>
+              <input type="text" id="discount" name="discount"  max-number="100"  data-ng-model="cardOffer.discount" maxlength="3" numbers-only="numbers-only" required="required" />
+              <span>% Off</span>
+            </div>
+            <!-- End .form-group -->
+          </div>
+        </div>
+        <!-- End .tip -->
+        <div class="tip post-date no-arrow">
+          <div class="inner">
+
+              <div class="form-group">
+                  <label for="end_date">Posting End Date</label>
+                  <input type="date" id="end_date" name="input" data-ng-model="postingEnd.date" placeholder="MM/DD/YYYY" maxlength="10" required />
+              </div>
+              <!-- End .form-group -->
+              <div class="form-group">
+                  <label>Time</label>
+
+                  <select ng-model="postingEnd.hours">
+                      <option value="01">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <option value="04">4</option>
+                      <option value="05">5</option>
+                      <option value="06">6</option>
+                      <option value="07">7</option>
+                      <option value="08">8</option>
+                      <option value="09">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+		      <option value="12">12</option>
+                  </select>
+                  <select ng-model="postingEnd.minutes">
+                      <option value="00">00</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                  </select>
+                  <select ng-model="postingEnd.am">
+                      <option value="AM">AM</option>
+                      <option value="PM">PM</option>
+                  </select>
+              </div>
+
+
+
+
+          </div>
+            <!-- End .form-group -->
+            <span class="tipText">After 90 Days Posting Will Close</span>
+          </div>
+        </div>
+        <!-- End .tip -->
+        <div class="tip activation-date">
+          <div class="inner">
+              <div class="form-group inline">
+                  <label for="activation_date">Activation Date</label>
+                  <input type="date" id="activation_date" name="input" data-ng-model="activation.date" placeholder="MM/DD/YYYY" maxlength="10" required />
+              </div>
+              <!-- End .form-group -->
+              <div class="form-group inline">
+                  <label>Time</label>
+
+                  <select ng-model="activation.hours">
+                      <option value="01">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <option value="04">4</option>
+                      <option value="05">5</option>
+                      <option value="06">6</option>
+                      <option value="07">7</option>
+                      <option value="08">8</option>
+                      <option value="09">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+		      <option value="12">12</option>
+                  </select>
+                  <select ng-model="activation.minutes">
+                      <option value="00">00</option>
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="40">40</option>
+                      <option value="50">50</option>
+                  </select>
+                  <select ng-model="activation.am">
+                      <option value="AM">AM</option>
+                      <option value="PM">PM</option>
+                  </select>
+              </div>
+
+            <!-- End .form-group -->
+          </div>
+        </div>
+
+
+        <!-- End .tip -->
+        <div class="tip max">
+          <div class="inner">
+            <div class="form-group">
+              <label for="max">Max Quantity</label>
+              <span>$</span>
+              <input type="text" id="max" name="max" data-ng-model="cardOffer.totalQuantity" maxlength="4" numbers-only="numbers-only" required="required" />
+            </div>
+            <!-- End .form-group -->
+          </div>
+        </div>
+        <!-- End .tip -->
+      </div>
+      <div class="resale">
+      	<div class="tool hidden">For Resale</div>
+        <div class="tip">
+        	<h3>Offer Description</h3>
+          <textarea id="desc" name="desc" required ng-model="cardOffer.description"></textarea>
+          <h3>Founder$hare Conditions</h3>
+	  <textarea disabled="disabled">{{conditions.platform}}</textarea>
+	  <textarea data-ng-model="cardOffer.conditions" data-ng-maxlength="{{conditions.maxChars}}" placeholder="You can add your own conditions here (max {{conditions.maxChars}} characters)"></textarea>
+        </div>
+      </div>
+      <!-- End .resale -->
+      <a href="javascript:;" class="btn btn-secondary btn-post" ng-if="cardOffer.status == 'DRAFT'" data-ng-click="postNow()" ngc-submit-form="'#founderForm'" data-only-mark="true">Post Now</a>
+    </form>
+    <!-- End .form -->
+  </div>
+  <!-- End .main -->
+
+  <div class="modalBg"
+  	data-ng-class="{'on': modal}"
+    data-ng-click="closeModal()"></div>
+  <div class="modal" data-ng-class="{'on': saveModal}">
+    <p>Your Founder$hare Posting is saved</p>
+    <div class="button-group">
+    	<a href="javascript:;" class="btn btn-secondary" data-ng-click="closeModal()">Done</a>
+    </div>
+  </div>
+  <div class="modal" data-ng-class="{'on': notDraftModal}">
+    <p>Only drafts can be saved.</p>
+    <div class="button-group">
+    	<a href="javascript:;" class="btn btn-secondary" data-ng-click="closeModal()">Done</a>
+    </div>
+  </div>
+    <div class="modal" data-ng-class="{'on': notVerifiedModal}">
+        <p>This action is not allowed until the business is verified.</p>
+        <div class="button-group">
+            <a href="javascript:;" class="btn btn-secondary" data-ng-click="closeModal()">Done</a>
+        </div>
+    </div>
+    <div class="modal" data-ng-class="{'on': isVerificationFeePaidModal}">
+        <p>This action is not allowed until you pay the verification fee.</p>
+        <div class="button-group">
+            <a href="javascript:;" class="btn btn-secondary" data-ng-click="closeModal()">Done</a>
+        </div>
+    </div>
+  <!-- End .modal -->
+  <div class="modal modal-post" data-ng-class="{'on': postModal}">
+    <p>Your Founder$hare Posting is Now Active</p>
+    <div class="bar">
+        <ngc-auto-share share-category="'created card'" share-text="shareText" share-text-tw="shareTextTw" share-details="shareDetails"></ngc-auto-share>
+      </dl>
+    </div>
+    <div class="button-group">
+    	<a href="#/Founder$hares" ngc-fire-auto-share class="btn btn-secondary">Done</a>
+    </div>
+  </div>
+
+</div>
+<!-- End .container -->

@@ -1,0 +1,50 @@
+<div class="container history info">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+    
+  <!-- End Aside -->
+  <div class="main edit-pages">
+    <h2>Edit Static Pages</h2>
+    <div class="page-selector">
+      <label for="pageSelector">Select the page you want to edit</label>
+      <select id="pageSelector" data-ng-options="page.name for page in pages.availablePages" data-ng-model="pages.activePage"></select>
+      <a class="btn btn-primary push-right" data-ng-click="save()">Save changes</a>
+      <a class="btn btn-danger push-right" data-ng-click="reset()">Reset</a>
+    </div>
+    <div class="editor">
+      <textarea id="ckeditor" data-ng-model="pages.activePage.content" data-ck-editor></textarea>
+      <div class="editor-help">
+	<h3>Upload Images</h3>
+	<p>To insert an image, just drag and drop it from your file
+	  browser into the editor window. The file will be uploaded
+	  automatically.</p>
+      </div>
+    </div>
+  </div>
+  <!-- End .main -->
+
+  <div class="modalBg" data-ng-class="{'on':modal}"></div>
+  <div class="modal modal-post modal-opened-gift" data-ng-class="{'on': modal}">
+
+    <h3>Please confirm changes with your password</h4>
+
+    <p class="detail-text">To prevent that you edit a page by mistake, we ask you to
+      confirm this action by entering your password.</p>
+
+    <form>
+      <label>
+	Password: <input type="password" data-ng-model="password"/>
+      </label>
+    </form>
+    
+    <div class="button-group next-steps">
+      <a data-ng-click="confirmPassword()" class="btn btn-primary">Confirm</a>
+    </div>
+    <div class="button-group">
+      <a ng-click="closeModal()" class="btn btn-secondary">Cancel</a>
+    </div>
+  </div>
+    
+</div>
+<!-- End .container -->

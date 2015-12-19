@@ -1,0 +1,142 @@
+{
+	"user":[
+		{
+			"li":"My Info",
+			"role":"champion,founder"
+		},
+		{
+			"li":"My Founder$hares",
+			"role":"champion,founder"
+		},
+		{
+			"li":"Founders Status",
+			"role":"employee"
+		},
+		{					
+			"li":"My History",
+			"role":"champion,founder,employee"
+		},
+		{					
+			"li":"Employees",
+			"role":"founder,employee"
+		}
+	],
+	"totalPay":"$95",
+	"giftcards":"My Founder$hares",
+	"totalSold":"Total amount Sold",
+	"NumberSold":"$ 525",
+	"totalRedeemed":"Total amount Redeemed",
+	"NumberRedeemed":"$ 450",
+	"li1":"Business",
+	"li2":"Number of F$'s",
+	"li3":"Amount",
+	"li4":"Status",
+	"listItem":[
+		{
+		  "company":"Business Logo",  
+		  "name":"Business Name", 
+		  "numberCart":"2", 
+		  "amount1":"1", 
+		  "money1":"$100",
+		  "amount2":"2", 
+		  "money2":"$ 50", 
+		  "resale1":"Resale", 
+		  "resale2":"Resale", 
+		  "cancel1":"Cancel", 
+		  "cancel2":"Cancel"
+		},
+		{
+		  "company":"Business Logo",  
+		  "name":"Business Name", 
+		  "numberCart":"2", 
+		  "amount1":"1", 
+		  "money1":"$100",
+		  "amount2":"2", 
+		  "money2":"$ 50", 
+		  "resale1":"For Resale", 
+		  "resale2":"Resale", 
+		  "cancel1":"Cancel", 
+		  "cancel2":"Cancel"
+		},
+		{
+		  "company":"Business Logo",  
+		  "name":"Business Name", 
+		  "numberCart":"3", 
+		  "amount1":"1", 
+		  "money1":"$50",
+		  "amount2":"2", 
+		  "money2":"$ 50", 
+          "amount3":"3", 
+		  "money3":"$ 50", 
+		  "resale1":"For Resale", 
+		  "resale2":"Resale",
+          "resale3":"Resale",
+		  "cancel1":"Cancel", 
+		  "cancel2":"Cancel",
+          "cancel3":"Cancel"
+		},
+		{
+		  "company":"Business Logo",  
+		  "name":"Business Name", 
+		  "numberCart":"1", 
+		  "amount1":"1", 
+		  "money1":"$100",
+		  "resale1":"Resale", 
+		  "cancel1":"Cancel"
+		}
+	],
+	"more": {
+		"company":"Business Logo",  
+		"name":"Business Name", 
+		"numberCart":"1", 
+		"amount1":"1", 
+		"money1":"$100",
+		"amount2":"1", 
+		"money2":"$ 50", 
+		"resale1":"For Resale", 
+		"resale2":"Resale", 
+		"cancel1":"Cancel", 
+		"cancel2":"Cancel"
+	},
+	"listData":[
+		{
+			"dateTime" : "12/23/2014 10:00 PM",
+			"available" : "$4320",
+			"discount" : "5%",
+			"totalValue" : "100",
+			"price" : "$95",
+			"logo":"Business Logo",  
+		  "name":"Business Name", 
+		  "founderName":"Founder Name", 
+		  "hours":"Lorem ipsum",
+		  "activation":"Activation :", 
+		  "data":"12/23/2014", 
+		  "time":"10:00 PM", 
+		  "sale":"20%", 
+		  "onOff":"Off", 
+		  "expiration":"No expiration date", 
+		  "progess":"8", 
+		  "allProgess":"25",
+		  "remain":"remain"
+		}
+	],
+	"clone":{
+			"dateTime" : "",
+			"available" : "",
+			"discount" : "",
+			"totalValue" : "",
+			"price" : "",
+			"name":"", 
+			  "founderName":"", 
+			  "hours":"",
+			  "activation":"", 
+			  "data":"", 
+			  "time":"", 
+			  "sale":"", 
+			  "onOff":"Off", 
+			  "expiration":"", 
+			  "progess":"", 
+			  "allProgess":"",
+			  "remain":""
+	} 
+}

@@ -1,0 +1,36 @@
+<div class="container emailReport">
+
+  <div class="main feedback no-background">
+  	<h2>Provide Feedback</h2>
+    <div class="form">
+      <form name="feedbackForm" data-ng-submit="submitQuery()">
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" id="subject" maxlength="1024" data-ng-model="subject"
+            data-ng-class="{'error':submitted && feedbackForm.subject.$error.required}"
+            required="required" />
+        </div>
+        <!-- End .form-group -->
+        <div class="form-group">
+          <label>Type</label>
+          <div id="feedback_type" dropdown-select="feedbackTypes" dropdown-model="feedbackType" dropdown-item-label="name"></div>
+        </div>
+        <!-- End .form-group -->
+        <div class="form-group last">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" maxlength="1024"
+          	data-ng-model="message">
+          </textarea>
+        </div>
+        <!-- End .form-group -->
+        <div class="button-group">
+        	<a href="javascript:;" class="btn btn-secondary" data-ng-class="{disabled: feedbackSending}" data-ng-click="send();">Send</a>
+        </div>
+        <!-- End .button-group -->
+      </form>
+     </div>
+  </div>
+  <!-- End .main -->
+  
+</div>
+<!-- End .container -->

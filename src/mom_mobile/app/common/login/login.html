@@ -1,0 +1,90 @@
+<!-- login page content -->
+<div id="login">
+    <div class="wrapper">
+        <header>
+            <!-- logo -->
+            <div class="logo vertical-align-subs">
+                <img src="assets/i/logo-main.png" alt="LOGO"/>
+
+                <div class="logo-back-rect"></div>
+            </div>
+        </header>
+        <!-- End header -->
+
+        <div ng-show="!showChooseAccountType" class="main-container">
+            <h2>LOGIN</h2>
+            <!-- input form -->
+            <form data-ng-submit="login()" data-ng-class="{error: showError}">
+                <div class="error-message">Invalid Username / Password</div>
+                <fieldset>
+                    <div class="form-group vertical-align-subs">
+                        <div class="icon sprite sprite-grey-person"></div>
+                        <input id="userName" data-ng-focus="clearValidateError();" type="text" name="username" placeholder="Email or Username"
+                               autocomplete="off"
+                               data-ng-model="username"/>
+                    </div>
+                    <div class="form-group vertical-align-subs">
+                        <div class="icon sprite sprite-lock"></div>
+                        <input id="password" data-ng-focus="clearValidateError();" type="password" name="password"
+                               placeholder="Password" autocomplete="off"
+                               data-ng-model="password"/>
+                    </div>
+                    <div class="remember-me-group vertical-align-subs">
+                        <div data-ng-click="toggleRememberMe();" data-ng-class="{checked:rememberMe}"
+                             class="icon check-box  vertical-align-subs">
+                            <div class="icon sprite sprite-blue-tick"></div>
+                        </div>
+                        <span data-ng-click="toggleRememberMe();" >Remember me</span>
+                        <span class="forget-password"><a href="#/reset-password"> Forgot Password?</a></span>
+                    </div>
+                </fieldset>
+                <div class="controls">
+                    <input type="submit" class="hide">
+                    <button type="submit" class="btn btn-login btn-primary btn-large">Login</button>
+                </div>
+                <div class="sign-up-info">Don't have an account? <a href="#/sign-up-choose-account-type">Sign up now</a>
+                </div>
+            </form>
+            <!-- horizontal splitter above social login icons -->
+            <div class="sprite sprite-shadow-hspliter"></div>
+            <div class="social-media-box">
+                <div>Or, log in with Social Media</div>
+                <!-- Social Media icons -->
+                <div class="social-media-groups">
+                    <!-- facebook -->
+                    <a data-ng-click="loginWithSocialNetwork(socialNetworks.facebook)" class="social-media sprite facebook-icon"> </a>
+                    <!-- twitter -->
+                    <a data-ng-click="loginWithSocialNetwork(socialNetworks.twitter)" class="social-media sprite twitter-icon"> </a>
+                    <!-- linkedin -->
+                    <a data-ng-click="loginWithSocialNetwork(socialNetworks.linkedin)" class="social-media sprite linkedin-icon"> </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-show="showChooseAccountType" class="main-container">
+            <h2>CHOOSE ACCOUNT TYPE</h2>
+
+            <form>
+                <div class="account-type-group">
+                    <!-- champion account type icon with label -->
+                    <a class="account-type-icon-with-label" ng-click="chooseAccountType('CHAMPION')">
+                        <div class="circle">
+                            <div class="sprite sprite-champion"></div>
+                        </div>
+                        <div class="icon-label">CHAMPION</div>
+                    </a>
+                    <!-- founder account type icon with label -->
+                    <a class="account-type-icon-with-label" ng-click="chooseAccountType('FOUNDER')">
+                        <div class="circle">
+                            <div class="sprite sprite-founder"></div>
+                        </div>
+                        <div class="icon-label">BUSINESS OWNER</div>
+                    </a>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+</div>

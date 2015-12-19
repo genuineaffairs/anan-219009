@@ -1,0 +1,60 @@
+<div class="container founder gift-card-summary">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+
+  <div class="main" ng-if="!isHistory">
+  	<h2>Gift Card Summary</h2>
+      
+      
+      <table>
+          <thead>
+            <tr>
+                <th>Id</th>
+                <th>Amount</th>
+                <th>Redeemed</th>
+                <th>Remaining</th>
+                <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in giftCards">
+                <td>{{item.readableId}}</td>
+                <td>{{item.originalQuantity | currency}}</td>
+                <td>{{item.totalRedeemed | currency}}</td>
+                <td>{{item.quantity | currency}}</td>
+                <td>
+                    <a ng-click="showHistory(item)" href="javascript:" class="btn btn-secondary">History ({{item.history.length}})</a>
+                </td>
+            </tr>
+          </tbody>
+      </table>
+  </div>
+  <div class="main" ng-if="isHistory">
+  	<h2>Gift Card History<br/><span>{{giftCard.readableId}}</span></h2>
+   <h3></h3>
+      
+      
+      <table>
+          <thead>
+            <tr>
+                <th>User</th>
+                <th>Action</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in giftCard.history">
+                <td>{{item.user}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.timestamp | date: "short"}}</td>
+            </tr>
+          </tbody>
+      </table>
+      
+      <a href="javascript:" class="back-btn btn btn-secondary" ng-click="hideHistory()">Back</a>
+  </div>
+</div>
+<!-- End .container -->

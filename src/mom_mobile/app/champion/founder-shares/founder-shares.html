@@ -1,0 +1,114 @@
+<!-- search bar -->
+<div data-ng-include="'components/search/search-bar.html'"></div>
+<!-- end search bar -->
+
+<div class="container-fluid">
+    <div class="no-offers" ng-show="giftCardOffers != null && !giftCardOffers.length">
+        <p>Hi <span>{{user.firstName}}</span>,</p>
+
+        <p>You found the right place to redeem a Founder$hare gift card, but first you need to buy one. :)</p>
+        <p>Here is a sample of offers in your area.</p>
+
+    </div>
+
+    <div>
+
+        <div class="blocksList suggested-offers" ng-if="suggestedOffers.length">
+
+            <section class="businessBlock clearfix" data-mom-tapstate
+                     data-ng-repeat="giftCardOffer in suggestedOffers"
+                     data-ng-click="giftCardOffer.isOpen = !giftCardOffer.isOpen">
+                <figure class="busLogoWrap">
+                    <img src="assets/i/px.png" class="thumb" alt="" data-ng-src="{{giftCardOffer.businessPicture}}"/>
+                </figure>
+                <div class="infoWrap">
+                    <div class="info">
+                        <h3 class="name">{{giftCardOffer.businessName}}</h3>
+
+                        <div class="meta">Activation: {{giftCardOffer.activationDateTime | date:longDateFormat}}</div>
+                        <!-- /.meta -->
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="more" data-ng-click="vm.showDetails(giftCardOffer.id)"
+                     data-mom-tapstate data-ng-show="giftCardOffer.isOpen">
+                    <div class="off">
+                        <div class="per">
+                            <span class="val">{{giftCardOffer.discount}}% </span>
+                            <sup>off</sup>
+                        </div>
+                        <!-- /.per -->
+                        <div class="expiry">
+                            <span data-ng-if="!giftCardOffer.expirationDate || giftCardOffer.expirationDate===null">Gift Card Never Expires</span>
+                            <span data-ng-if="giftCardOffer.expirationDate && giftCardOffer.expirationDate!==null">Offer ends {{giftCardOffer.expirationDate | timeRemaining: 'short'}}</span>
+                        </div>
+                    </div>
+                    <!-- /.off -->
+                    <div class="remain gaugeWrap">
+                        <div data-mom-gauge class="gaugeEl" data-remain="giftCardOffer.availableQuantity"
+                             data-total="giftCardOffer.totalQuantity"></div>
+                        <div class="gauge-label">${{giftCardOffer.availableQuantity}}</div>
+                        <div class="gauge-caption">remain</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </section>
+
+            <a href="#/" class="btn btn-primary btn-more">More</a>
+        </div>
+    </div>
+
+    <div class="founderShareList">
+        <section class="businessBlock shdw" data-ng-repeat="giftCardOffer in giftCardOffers |filter:search | orderBy:sort.orderBy:sort.orderRevers">
+            <figure class="busLogoWrap">
+                <img src="assets/i/px.png" class="thumb" alt="" data-ng-src="{{giftCardOffer.businessPicture}}" />
+            </figure>
+            <div class="infoWrap" >
+                <div class="info">
+                    <h3 class="name">{{giftCardOffer.businessName}}</h3>
+                    <div class="meta">Activation: {{giftCardOffer.activationDateTime | date:longDateFormat}}</div>
+                    <!-- /.meta -->
+                </div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="carouselContainer offerSlider">
+                <div data-slick data-dots="true" data-infinite="false" data-speed=300 data-slides-to-show=1 data-autoplay="false"
+                     data-touch-move="true" data-slides-to-scroll=1 data-arrows='false' class="slider mainSlider one-time">
+                    <div class="slide" data-ng-repeat="giftCard in giftCardOffer.giftCards track by $index">
+                        <div class="scWrap">
+                            <div class="more shdw" data-ng-click="vm.showOptions(giftCard.id, giftCard.giftCardOfferId)">
+                                <div class="off">
+                                    <div class="price">{{giftCard.quantity | currency:"$ ":2}}</div>
+                                </div>
+                                <!-- /.off -->
+                                <div class="remain gaugeWrap">
+                                    <a class="btn btn-success" data-ng-href="#/redeem/{{giftCard.id}}" data-ng-click="$event.stopPropagation()">
+                                        Redeem Now
+                                    </a>
+                                </div>
+                                <div class="clear"></div>
+                                <a class="lnkDn" href="javascript:;"></a>
+                            </div>
+                        </div>
+                        <!-- /.scWrap -->
+                    </div>
+                </div>
+                <!-- /.mainSlider -->
+            </div>
+            <!-- /.carouselContainer -->
+        </section>
+    </div>
+    <!-- /.founderShareList -->
+</div>
+
+<div class="modalWrap optionsModal" data-ng-show="vm.isoptionsModal" data-ng-click="vm.isoptionsModal=false;">
+    <div class="modal">
+        <ul class="optionsLst">
+            <li><a href="javascript:" data-ng-href="#/details/{{vm.giftCardId}}" data-ng-click="vm.isoptionsModal=false;" >View the Details</a></li>
+            <li><a href="javascript:" data-ng-href="#/send-gift/{{vm.giftCardId}}" data-ng-click="vm.isoptionsModal=false;" >Gift this Founder$hare</a></li>
+        </ul><!-- /.optionsLst -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.optionsModal -->

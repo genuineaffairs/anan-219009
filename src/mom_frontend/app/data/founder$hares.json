@@ -1,0 +1,30 @@
+{
+	"founder$hares": [
+		{
+			"amountSold": "$ 525",
+			"F$": "542",
+			"amountRedeemed": "$ 450",
+			"currentPosting": [
+				{
+					"name": "Business Name",
+					"activation": "12/23/2014 10:00 PM",
+					"logo": "./i/image.jpg",
+					"date": "No expiration date",
+					"max": "5000",
+					"available": "800",
+					"value": "$118.75",
+					"discount": "0.2"
+						}
+			],
+			"status": [
+				{
+					"timeRemaining": "20 days 4h",
+					"goalAmount": "$5000",
+					"goalAeached": "$4200",
+					"champions": "350",
+					"amountRedeemed": "48"
+				}
+			]
+		}
+	]	
+}

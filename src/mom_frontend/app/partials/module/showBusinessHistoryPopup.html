@@ -1,0 +1,38 @@
+<div ng-controller="showBusinessHistoryPopupCtrl">
+    <div class="details-card" data-ng-if="display">
+        <dl>
+            <dt class="font-size48">Activities</dt>
+            <dd>
+
+                <div class="view-details">
+
+
+                    <div class="view-info">
+
+
+                        <div class="all-activities">
+                            <ul class="header">
+                                <li class="action">Type of Activity</li>
+                                <li class="activities-details">Date of Activity</li>
+                                <li class="amount">Amount</li>
+                            </ul>
+                            <ul data-ng-repeat="history in historyList">
+                                <li class="action"><strong>{{history.type}}</strong></li>
+                                <li class="activities-details">{{history.timestamp | date:'medium'}}</li>
+                                <li class="amount">{{history.details}}</li>
+                            </ul>
+                        </div>
+                        <div class="show-activities margin-top-7">
+                            <p>
+                                <img id="close" src="../i/close.png" alt="close" data-ng-click="closeInfo()">
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </dd>
+        </dl>
+        <div class="clearfix"></div>
+    </div>
+</div>

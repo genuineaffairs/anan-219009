@@ -1,0 +1,140 @@
+{
+    "generalQuestions": [{
+        "q": "What is a Founder$hare mobile gift card (sometimes abbreviated F$)?",
+        "a": "The technical definition is a digital closed loop gift card, but it is much more than that. A Founder$hare mobile gift card is an upfront purchase of goods or services that helps you: retain and reward your current customers, engage your current customer community to help you grow and create a source of funds from the community that cares most about you. There is no need to buy a point of sale system or physical gift cards, Founder$hare mobile gift cards are bought online and redeemed through smartphones."
+    }, {
+        "q": "What is a closed loop gift card?",
+        "a": "A closed loop gift card is a term defined for a gift card that can only be used in a single store or group of stores."
+    }, {
+        "q": "Who is a Champion?",
+        "a": "A Champion can be anyone who buys a Founder$hare mobile gift card, but at their most basic level, a Champion is someone who is passionate about supporting the businesses they frequent and wants to help them succeed. Your favorite coffee shop, hair salon, health food store; anyone you love visiting and want to support."
+    }, {
+        "q": "Who is the Business Owner?",
+        "a": "A business owner is anyone who owns a business and is able to make decisions for that business."
+    }, {
+        "q": "Can I be both a Business Owner and a Champion?",
+        "a": "Absolutely! If you have a favorite store that you like, you can buy gift cards for them too."
+    }, {
+        "q": "Can Founder$hare mobile gift cards be redeemed for online purchases?",
+        "a": "Not at this time."
+    }, {
+        "q": "What does it cost?",
+        "a": "The fees are discussed in detail in the “Pricing” section of FAQ. The only cost for champion is the cost of the gift card itself i.e. the cost of buying the gift cards to support the business owner. The Champion chooses the amount they want to spend. (No additional fees). Business owners pay a subscription fee (currently $99 per month) plus normal credit/debit card processing fees comparable to what they pay today for these types of transactions."
+    }, {
+        "q": "How do you protect my financial information?",
+        "a": "We do not store your financial information in our system and we use a Level 1 Payment Card Industry Data Security Standard (PCI DSS) compliant service provider for all of our payment processing."
+    }, {
+        "q": "How do I provide feedback?",
+        "a": "Either use the feedback form that you can see at the top of the webpage or email us at <a href=\"mailto:hi.there@foundershare.com\">hi.there@foundershare.com.</a>"
+    }, {
+        "q": "I see something offensive – what do I do?",
+        "a": "Throughout the website (and on your phone), you will see a “Report Abuse” link or button. You can use these anytime you see something offensive or have a major problem."
+    }, {
+        "q": "What if I am really excited about FounderShare – what can I do to support this fabulous idea and the community that is being created?",
+        "a": "Hooray! Help us spread the word! You can give us a shout-out on social media, tell your friends and fellow business owners to sign up or like us on Facebook and also make sure you tell your friends about your favorite businesses. Let us know! (A little flattery goes a long way.)"
+    }],
+    "businessOwners": [{
+        "q": "Are Founder$hare mobile gift cards for every business?",
+        "a": "Unfortunately, no. You need to have a business where you or your employees see your customers at the time of the sale (money is transacted in person). Also, there are certain types of businesses that are not able to offer Founder$hare mobile gift cards. You can find the complete list in our Terms and Conditions. We are going to need you to look at the Terms and Conditions to find the list because the terms are important and we want you to read them."
+    }, {
+        "q": "Who decides on the terms of the Founder$hare mobile gift card offering?",
+        "a": "As the business owner, you do! See below for more details."
+    }, {
+        "q": "Who is a Champion?",
+        "a": "A Champion can be anyone who buys a Founder$hare mobile gift card, but at their most basic level, a Champion is someone who is passionate about supporting the businesses they frequent and wants to help them succeed. Your favorite coffee shop, hair salon, health food store; anyone you love visiting and want to support."
+    }, {
+        "q": "Is there a maximum or minimum that can be offered?",
+        "a": "There is no minimum. During our beta period, the maximum is $9,999."
+    }, {
+        "q": "What do I need to do to post an offer?",
+        "a": "To post an offer, you need to:<br>1. Verify your business and set up your account payment details<br>2. Set your terms<br> 3. Click the “Post” button and spread the word"
+    }, {
+        "q": "How do I verify my business?",
+      "a": "You can verify your business in a few short steps:<br>1. Subscribe<br>2. Fill out your account details<br>3. Let us know you’re ready by sending an email to <a href=\"mailto:hi.there@foundershare.com\">hi.there@foundershare.com</a>"
+    }, {
+      "q": "What things should I think about when setting my terms?",
+      "a": "Here are a few things to consider.<br>1. How much do you want to sell? We would suggest starting small and offering larger amounts over time. Your starter amount should be meaningful to you. For example, a total offer for $10 is not meaningful.<br>2. You need to decide on what discount (if any) you would like to offer. Our rule of thumb – enough to generate interest; not so much that it is not a good deal for you financially.<br>3. When you describe your business, this is your chance to strike up a conversation with your champions. What are you working toward/where are you taking your business?</a>"
+    }, {
+        "q": "I am not ready to post yet, do I have to pay subscription fees?",
+        "a": "Nope. You can still open your Business Owner account and choose to subscribe later."
+    }, {
+        "q": "I am trying to post my Founder$hare gift card offer. Why doesn’t my “Post Now” button work?",
+        "a": "Check to make sure that your business has been verified and all of your terms have been filled in. Still having trouble? Send us an email at <a href=\"mailto:hi.there@foundershare.com\">hi.there@foundershare.com</a> or use the feedback form and we are happy to help you out."
+    }, {
+        "q": "What happens if I don’t reach my goal?",
+        "a": "You still get the funds from the gift cards that sold. For your next posting you can think about changing some of your terms for better success."
+    }, {
+        "q": "When do I receive my funds?",
+        "a": "About 48 hours after a champion makes a purchase."
+    }, {
+        "q": "Can one business have multiple locations?",
+        "a": "Unfortunately for now, each business only has one point on the map."
+    }, {
+      "q": "My employees do not have smartphones. Are Founder$hare mobile gift cards for me?",
+      "a": "Possibly. You will need to have a smartphone on hand for your employees to complete the sale and include this step in your planning. They do not have to use their own smartphone – you may choose to provide one for all of your employees to share."
+    }, {
+      "q": "What do I have to do at the point of sale when a customer wants to use a Founder$hare mobile gift card to pay?",
+      "a": "Go to <a href=\"foudershare.com\">foundershare.com</a> on your smartphone. Enter your username and password. (We suggest doing this step at the beginning of the shift.) Follow the simple directions on the screen which are – type in the amount to be redeemed, scan the QR code from the champion’s phone and click confirm."
+    }, {
+      "q": "What happens if I do not pay the monthly subscription fee?",
+      "a": "If that’s the case then you will not be able to post an offer, your current posting will be removed and you will lose access to the reports. You WILL be able to redeem the Founder$hare mobile gift cards for your champions."
+    }, {
+      "q": "Can I take my posting down?",
+      "a": "Yes. It is the big red cancel button on your “My Founder$hares” page in your profile. Of course you are still obligated to redeem any Founder$hare mobile gift cards that were sold while the posting was open."
+    }],
+  "championQuestions": [{
+    "q": "How do I become a Champion?",
+    "a": "You are already a Champion! Review the small businesses offering Founder$hare mobile gift cards and decide how much you want to buy and from whom. Follow the directions on the site."
+  }, {
+    "q": "Are there any limitations of how much a Champion can purchase?",
+    "a": "We prefer that you keep it under $2,000 for right now."
+  }, {
+    "q": "How do I redeem Founder$hare mobile gift cards?",
+    "a": "When you are in your favorite local store:<br>1. Go to foundershare.com from your smartphone and enter your username and password.<br>2. Click on the business of your choice and click redeem. You will be looking at a QR code (a black and white picture of a bunch of black squares in a pattern). Here’s an example.<br><img src=\"https://foundershare.com/wp/wp-content/uploads/2015/06/qr.png\"></img><br>3. Show your screen to the business employee so they can scan it."
+  }, {
+    "q": "I don’t have a smartphone – should I buy a Founder$hare mobile gift card?",
+    "a": "If you have friends that have smartphones, then yes! Founder$hare mobile gift cards make great gifts and you do not need a smartphone to gift them. If you do not plan to gift them and you do not own a smartphone, then it will be difficult for you to redeem them. We want the entire experience of buying and redeeming to be hassle free. We want you to say “Wow!” You need to have a smartphone for this type of experience."
+  }, {
+    "q": "Do I have to pay subscription fees?",
+    "a": "There are no fees for Champions. We are just happy that you are supporting Main Street businesses!"
+  }, {
+    "q": "How do I know that a business is legit?",
+    "a": "Ideally, this should be a business you are already familiar with. Listen to the community – we will rely on our community to share positive comments as well as any concerns that you might have."
+  }, {
+    "q": "What if a business goes out of business?",
+    "a": "Unfortunately this is a reality of being in small business and why we founded FounderShare; to try to make sure that doesn’t happen. However, there are no guarantees that this will not happen to a member of our community. If a Founder$hare mobile gift card has not been redeemed and the business goes bankrupt, then the gift card has no value."
+  }, {
+    "q": "What if a business owner will not redeem my Founder$hare?",
+    "a": "That is not cool and we do not anticipate this happening. In the rare case that it does happen … On the menu to your phone, go “Report Abuse” and let us know about your experience right away. We will work with you and the business owner to try to rectify it."
+  }],
+  "pricingQuestions": [{
+    "q": "What is the monthly subscription fee for a business owner?",
+    "a": "$99 per month."
+  }, {
+    "q": "What are the payment processing fees?",
+    "a": "2.9% plus $0.30 per transaction."
+  }, {
+    "q": "What are all of the fees that a business owner will incur?",
+    "a": "The monthly subscription fee, any discount you put on your Founder$hare mobile gift card and the credit card processing fee."
+  }, {
+    "q": "How much does it cost for a champion to become a member?",
+    "a": "Nothing other than a minute of time on-line to fill out the registration form."
+  }, {
+    "q": "Does FounderShare take a percentage of the mobile gift card sales?",
+    "a": "Nope. The transaction fee (2.9% + $0.30 per transaction) is a pass-through cost from our merchant processor."
+  }],
+  "refundsQuestions": [{
+    "q": "Does FounderShare offer refunds on subscription fees?",
+    "a": "We do not offer refunds on subscription fees."
+  }, {
+    "q": "Does FounderShare offer refunds on mobile gift card purchases?",
+    "a": "We do not offer refunds on mobile gift card purchases."
+  }],
+  "randomQuestions": [{
+    "q": "I have an Android. Nothing happens when it is time to scan the customer’s QR code. What’s the deal?",
+    "a": "You may have disabled the camera functionality. Here’s how to get it back:<br>Open Chrome<br>1. Push the three dots on right hand side<br>2. Select Settings<br>3. Select Site Settings<br>4. Select Camera or Microphone<br>5.Click on <a href=\"foundershare.com\">foundershare.com</a><br>6. Under permissions select “Allow”"
+  }, {
+    "q": "I have an iPhone. When I go to take a picture of the customer’s QR code, I only see a black screen. What’s going on?",
+    "a": "You need to give Safari permission to use your camera. Follow these few steps and you should be good to go:<br>Open Chrome<br> 1. Go to settings<br>2. Go to privacy<br>3. Go to camera<br>4. Turn Safari on"
+  }]
+}

@@ -1,0 +1,26 @@
+<div class="container history info">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+
+  <!-- End Aside -->
+  <div class="main">
+    <h2>My History</h2>
+      <ul class="header">
+          <li class="action" data-ng-class="{'is-founder': checkFounder()}">Type of Activity</li>
+          <li class="details" data-ng-class="{'is-founder': checkFounder()}" data-ng-if="!checkFounder()">Business Name</li>
+          <li class="date" data-ng-class="{'is-founder': checkFounder()}">Date</li>
+          <li class="amount" data-ng-class="{'is-founder': checkFounder()}">Amount</li>
+	  <li class="recipient" data-ng-if="!checkFounder()" data-ng-class="{'is-founder': checkFounder()}">Recipient</li>
+      </ul>
+      <ul data-ng-repeat="history in historyList" data-ng-class="{odd: $odd, even: $even}">
+          <li class="action" data-ng-class="{'is-founder': checkFounder()}"><img src="" data-ng-src="{{getHistoryTypeIcon(history.type)}}"/></li>
+          <li class="details" data-ng-class="{'is-founder': checkFounder()}" data-ng-if="isUser && !isFounder" title="{{history.businessName}}">{{history.businessName}}</li>
+          <li class="date" data-ng-class="{'is-founder': checkFounder()}">{{history.timestamp | date:'mediumDate'}}</li>
+          <li class="amount" data-ng-class="{'is-founder': checkFounder()}">{{history.amount}}</li>
+	  <li class="recipient" data-ng-if="!checkFounder()" data-ng-class="{'is-founder': checkFounder()}" title="{{history.target}}"><a href="{{targetLink(history.target)}}">{{history.target}}</a></li>
+      </ul>
+  </div>
+  <!-- End .main -->
+</div>
+<!-- End .container -->

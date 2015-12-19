@@ -1,0 +1,222 @@
+<div class="container founder">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+
+  <!-- End Aside -->
+  <div class="main founder-main" data-ng-show="isFounder || isAdmin">
+  	<h2>My Founder$hares</h2>
+    <div class="bar">
+    	<dl>
+      	<dt>Total Amount Sold</dt>
+        <dd>{{totalAmountSold | currency:"$ ":0}}</dd>
+      </dl>
+      <dl>
+      	<dt>Total F$’s</dt>
+        <dd>{{totalCount}}</dd>
+      </dl>
+      <dl>
+      	<dt>Total Amount Redeemed</dt>
+        <dd>{{totalAmountRedeemed | currency:"$ ":0}}</dd>
+      </dl>
+    </div>
+    <!-- End .bar -->
+    <div class="well">
+    	<ul>
+      	<li>Current Posting</li>
+        <li>Status</li>
+        <li>Options</li>
+      </ul>
+    </div>
+    <!-- End .well -->
+    <div class="data"  ng-repeat="item in offers">
+    	<ul>
+      	<li>
+            <div class="business-info">
+                <div class="logo"><a href="#/FounderF$Posting?id={{item.id}}"><img src="../i/image.jpg" data-ng-src="{{item.businessPicture}}" alt="Pic" /></a></div>
+                <!-- End .logo -->
+                <a href="#/FounderF$Posting?id={{item.id}}" class="link">{{item.businessName}}</a>
+                <div class="activation">Activation : {{item.activationDateTime | date:'dd/MM/yyyy hh:mm a'}}</div>
+                <div class="info-bottom">
+                  <div class="discount">
+                      {{item.discount}}%<span>off</span>
+                  </div>
+                  <div class="date">No Expiration Date</div>
+                    <div class="left radial-progress percent" data-progress="{{item.availableQuantity}},{{item.totalQuantity}}">
+                        <div class="circle">
+                            <div class="circle-gauge" data-ng-init="gauge = getGauge(item)" data-ng-include="'partials/gauge.svg'"></div>
+                        </div>
+                        <div class="inset">
+                            <div class="percentage">
+                                <p><span>$</span><span class="progress">{{item.availableQuantity}}</span></p>
+                                <p>remain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End .business-info -->
+        </li>
+        <li>
+        	<dl>
+          	<dt>Time remaining:</dt>
+            <dd>
+                <span ng-if="item.status === 'ACTIVE'">{{item.expirationDate | timeRemaining}}</span>
+                <span ng-if="item.status !== 'ACTIVE'">{{item.status}}</span>
+            </dd>
+            <dt>Goal amount:</dt>
+            <dd>{{item.totalQuantity | currency}}</dd>
+            <dt>Goal reached:</dt>
+            <dd>{{item.totalQuantity - item.availableQuantity | currency}}</dd>
+            <dt>Champions:</dt>
+            <dd>{{item.numberOfGiftCard || 0}}</dd>
+            <dt>Amount redeemed:</dt>
+            <dd>{{item.redeemedQuantity || 0 | currency}}</dd>
+
+            <dt>Viewed:</dt>
+            <dd>{{item.viewCount}}</dd>
+            <dt>Purchased:</dt>
+            <dd>{{item.purchased}}</dd>
+            <dt>Redeemed:</dt>
+            <dd>{{item.redeems}}</dd>
+            <dt>Shared:</dt>
+            <dd>{{item.sharedCount}}</dd>
+          </dl>
+        </li>
+        <li>
+          <a href="#/FounderF$Posting" class="btn btn-secondary" ng-if="$index == 0">Create</a>
+          <a href="javascript:;" ng-if="item.status !== 'CANCELLED' && item.status !== 'ENDED'" class="btn btn-danger" ng-click="cancel(item)">Cancel Posting</a>
+          <a href="javascript:;" ng-if="item.status === 'CANCELLED' && business.isVerified" class="btn btn-secondary" ng-click="renew(item)">Renew Posting</a>
+          <a href="javascript:;" class="btn btn-secondary" ng-click="seeChampions(item.id)">See champions</a>
+        </li>
+      </ul>
+    </div>
+      <div class="data"  ng-if="!offers.length">
+        <p class="welcome-text" data-ng-if="!business.isVerificationFeePaid">Welcome to Founder$hare! This page will become the main reporting page for your account. Before you can create your first posting, you need to fill out some information. First step is to finish your profile. Click on "<a href="#/myInfo">My Info</a>" on the left to get started. Once that's complete, it's time to <a href="#/BusinessAccountSetup">set up your account</a>.</p>
+          <ul >
+              <li>&nbsp;</li>
+              <li>&nbsp;</li>
+              <li><a href="#/FounderF$Posting" class="btn btn-secondary" data-ng-if="business.isVerificationFeePaid">Create</a></li>
+          </ul>
+      </div>
+    <!-- End .data -->
+  </div>
+  <!-- End .main -->
+
+  <div class="main customer-main" data-ng-show="isUser">
+        <h2>My Founder$hares</h2>
+        <div class="bar user-bar">
+            <dl>
+                <dt>Total Amount Purchased<br/><span class="small">(Includes Gifts Received)</span></dt>
+                <dd>{{totalAmountPurchased | currency:"$ ":0}}</dd>
+            </dl>
+            <dl>
+                <dt>Total Amount Redeemed</dt>
+                <dd>{{totalAmountRedeemed | currency:"$ ":0}}</dd>
+            </dl>
+            <dl>
+                <dt>Total Amount Gifted</dt>
+                <dd>{{totalAmountGifted | currency:"$ ":0}}</dd>
+            </dl>
+        </div>
+        <!-- End .bar -->
+        <div class="well">
+            <ul>
+                <li>Business</li>
+                <li style="padding-left:100px">Number of F$'s</li>
+                <li style="padding-left:58px">Amount</li>
+                <li style="padding-left:86px">Options</li>
+            </ul>
+        </div>
+        <!-- End .well -->
+
+        <p class="no-offers" ng-show="items != null && !items.length">
+            Congrats! You're now ready to support a local business by purchasing a gift card. Here is a sample of offers in your area.
+        </p>
+      <div class="data suggested-offers" ng-if="suggestedOffers" >
+           <h3>Suggested Offers</h3>
+          <div class="business-info-wrapper">
+
+            <div class="business-info" ng-repeat="item in suggestedOffers" ng-click="showInfo(item.id)">
+              <div class="logo"><a href="javascript:"><img src="../i/image.jpg" data-ng-src="{{item.businessPicture}}" alt="Pic" /></a></div>
+              <!-- End .logo -->
+              <a href="javascript:" class="link">{{item.businessName}}</a>
+              <p>{{item.businessCity}}, {{item.businessState}}</p>
+              <div class="activation">Activation : {{item.activationDateTime | date:'dd/MM/yyyy hh:mm a'}}</div>
+              <div class="info-bottom">
+                  <div class="discount">
+                      {{item.discount}}%<span>off</span>
+                  </div>
+                  <div class="date">No Expiration Date</div>
+                  <div class="left radial-progress percent" data-progress="{{item.availableQuantity}},{{item.totalQuantity}}">
+                      <div class="circle">
+                          <div class="circle-gauge" data-ng-init="gauge = getGauge(item)" data-ng-include="'partials/gauge.svg'"></div>
+                      </div>
+                      <div class="inset">
+                          <div class="percentage">
+                              <p><span>$</span><span class="progress">{{item.availableQuantity}}</span></p>
+                              <p>remain</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          <div class="clearfix"></div>
+          <a href="#/" class="btn btn-primary">More</a>
+      </div>
+        <div class="data champion"  ng-repeat="item in items">
+            <ul>
+                <li>
+                    <div class="business-info">
+                        <div class="logo"><a href="javascript:" ng-click="showInfo(item.offerId)" ><img src="../i/image.jpg" data-ng-src="{{item.businessPicture}}" alt="Pic" /></a></div>
+                        <!-- End .logo -->
+                        <a class="link" href="javascript:" ng-click="showInfo(item.offerId)">{{item.businessName}}</a>
+                    </div>
+                    <!-- End .business-info -->
+                </li>
+                <li>
+                    <div class="data">
+                    {{item.sharesCount}}
+                    </div>
+                </li>
+                <li>
+                    <div class="data gift-btn-wrapper" ng-repeat="giftCard in item.giftCards">
+                    {{ giftCard.quantity | currency:"$ ":2}}
+                   <span ng-if="giftCard.isGiftedToAnotherPerson"> <br/>Gifted</span>
+                        <a href="#/FounderF$Gifting/{{giftCard.id}}" ng-if="giftCard.status === 'ACTIVE'" class="btn btn-secondary">Gift</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- End .data -->
+    </div>
+    <div class="modalBg"
+         data-ng-class="{'on':modal}"></div>
+
+    <div class="modal modal-post modal-opened-gift" data-ng-class="{'on': modalOpened}">
+        <p data-ng-if="nextSteps" class="detail-text">Ready to redeem? Your Founder$hare mobile gift card is already stored in your phone.</p>
+        <p data-ng-if="nextSteps" class="detail-text">You can view it anytime by going to <a href data-ng-click="goto('/')">foundershare.com</a> from your phone, not only when you want to redeem one.</p>
+        <p data-ng-if="nextSteps" class="detail-text">When you're ready to redeem:</p>
+        <ol data-ng-if="nextSteps" class="detail-text">
+          <li>1. Go to the store</li>
+          <li>2. Go to <a href data-ng-click="goto('/')">foundershare.com</a> on your mobile</li>
+          <li>3. Click Redeem</li>
+        </ol>
+        <p data-ng-if="nextSteps" class="detail-text">That's it! Your gift card balance will automatically update.</p>
+        <p data-ng-if="nextSteps" class="detail-text">Want to send a gift? No problem! You can do this anytime from "My Founder$hares" found in your profile or by <a href data-ng-click="goto('/Founder$hares')">clicking here</a></p>
+        <p data-ng-if="!nextSteps">You just got a gift! Think this is cool? Be sure to thank your friend and help spread the word!</p>
+
+        <div data-ng-if="!nextSteps" class="bar">
+            <ngc-auto-share share-category="shareCategory" share-text="shareText" share-text-tw="shareTextTw"></ngc-auto-share>
+        </div>
+        <div class="button-group">
+            <a ng-click="closeModal()" ngc-fire-auto-share class="btn btn-secondary">Done</a>
+
+        </div>
+        <div class="button-group next-steps">
+          <a data-ng-click="showNextSteps()" data-ng-if="!nextSteps" class="btn btn-secondary">Learn how to redeem here</a>
+        </div>
+    </div>
+</div>
+<!-- End .container -->

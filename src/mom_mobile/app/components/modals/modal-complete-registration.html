@@ -1,0 +1,17 @@
+
+<form name="form" novalidate ng-submit="submit()">
+<!-- confirm modal -->
+<div class="modal-body clearfix confirm-registration">
+    <div class="modal-icon modal-icon-question">?</div>
+    <p>Thanks for registering with your Twitter account. <br/> Please enter your email address to complete your registration.</p>
+    <input name="email" type="email" required placeholder="Email address" class="textbox" ng-model="email" />
+
+</div>
+<div class="modal-footer">
+    <div class="btn-group">
+        <a class="btn btn-large" data-ng-click="no()">Cancel</a>
+        <button class="btn btn-primary btn-large" data-ng-click="yes()">Submit</button>
+    </div>
+</div>
+</form>
+<!-- end confirm modal -->

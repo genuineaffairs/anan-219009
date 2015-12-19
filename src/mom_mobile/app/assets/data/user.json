@@ -1,0 +1,11 @@
+{
+  "kind": "champion",
+  "name": "John Doe",
+  "avatar": "assets/i/avatar.png",
+  "gift": {
+    "cards": 25,
+    "amount": 2000
+  },
+  "redeemed": 40,
+  "home": "/founder-shares"
+}

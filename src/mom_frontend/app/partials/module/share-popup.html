@@ -1,0 +1,20 @@
+<div class="modalBg on notify-popup">
+    <div class="modal on">
+        <div>
+            <p class="description-title">
+                <span class="comment">Message</span>
+            </p>
+            <textarea data-ng-if="shareSocial.type !== 'TWITTER'" placeholder="Add a message" class="txtAddCm" data-ng-model="shareSocial.message" maxlength="1000"></textarea>
+            <textarea data-ng-if="shareSocial.type === 'TWITTER'" maxlength="120" placeholder="Add a message" class="txtAddCm" data-ng-model="shareSocial.message"></textarea>
+        </div>
+        <!-- Specific to switch role -->
+        <br/>
+        <br/>
+        <div class="btn-group">
+            <button class="btn btn-secondary" data-ng-click="shareSocial.share()">Share</button>
+            <button class="btn btn-secondary" data-ng-click="$close()">Cancel</button>
+        <!-- ./Specific to switch role -->
+        </div>
+
+    </div>
+</div>

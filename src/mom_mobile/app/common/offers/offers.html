@@ -1,0 +1,135 @@
+<header>
+  <!-- logo -->
+  <div class="offers-logo">
+  </div>
+</header>
+
+<!-- search -->
+<div class="search">
+  <!-- order selector -->
+  <div class="order">
+    Filter
+    <div class="btn-group order-dropdown" data-dropdown="">
+      <button type="button" class="btn btn-primary btn-medium order-toggle dropdown-toggle" data-dropdown-toggle="">
+        {{vm.search.type.name}}
+        <span class="caret"></span>
+      </button>
+      <div class="dropdown-menu" role="menu">
+        <ul role="menu">
+          <li class="item" data-ng-repeat="item in vm.search.allTypes" data-ng-click="vm.typeChanged(item)">
+            {{item.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <span class="search-toggle" data-ng-click="vm.showSearch()"></span>
+  </div>
+</div>
+
+<div class="search"  data-ng-show="vm.isShowSearch">
+  <div class="searching">
+    <label class="input">
+      <span class="do-search"></span>
+      <input id="searchLocation" data-ng-model="vm.search.address" placeholder="Type your location" data-ng-keyup="search.checkEnter($event)"/>
+      <span class="clear" data-ng-click="vm.clearAddress()"></span>
+    </label>
+  </div>
+</div>
+<div class="search"  data-ng-show="vm.isShowSearch">
+  <div class="searching">
+    <label class="input">
+      <span class="do-search"></span>
+      <form novalidate name="searchForm" ng-submit="vm.doSearch()">
+        <input data-ng-model="vm.search.name" placeholder="Type your keyword"/>
+        <button ng-show="false"></button>
+      </form>
+      <span class="clear" data-ng-click="vm.clearSearch()"></span>
+    </label>
+  </div>
+</div>
+<div class="search" data-ng-show="vm.isShowSearch">
+
+  <div class="searching buttons">
+    <button class="btn btn-success btn-small"  data-ng-click="vm.doSearch()">search</button>
+    <button class="btn btn-default btn-small"  data-ng-click="vm.cancelSearch()">cancel</button>
+  </div>
+</div>
+<!-- end search -->
+
+<div class="container-fluid"  data-infinite-scroll="vm.loadMore()" data-infinite-scroll-parent="true">
+  <div class="no-offers" data-ng-if="vm.showAlternativeOffers">
+    <p>Nothing came up for that search, but here are a few local businesses that might interest you.</p>
+  </div>
+  <div class="clearfix">
+    <div class="blocksList">
+      <section class="businessBlock clearfix" data-mom-tapstate
+               data-ng-repeat="giftCardOffer in giftCardOffers"
+               data-ng-click="vm.toggleState(giftCardOffer);">
+        <figure class="busLogoWrap">
+          <img src="assets/i/px.png" class="thumb" alt="" data-ng-src="{{giftCardOffer.businessPicture}}"/>
+        </figure>
+        <div class="infoWrap">
+          <div class="info">
+            <h3 class="name">{{giftCardOffer.businessName}}</h3>
+
+            <div class="meta">{{giftCardOffer.businessCity}}, {{giftCardOffer.businessState}}</div>
+            <!-- /.meta -->
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="more" data-ng-click="vm.showDetails(giftCardOffer.id)"
+             data-mom-tapstate data-ng-show="giftCardOffer.isOpen">
+          <div class="off">
+            <div class="per">
+              <span class="val">{{giftCardOffer.discount}}% </span>
+              <sup>off</sup>
+            </div>
+            <!-- /.per -->
+            <div class="expiry">
+              <span data-ng-if="!giftCardOffer.expirationDate || giftCardOffer.expirationDate===null">Gift Card Never Expires</span>
+              <span data-ng-if="giftCardOffer.expirationDate && giftCardOffer.expirationDate!==null">Offer ends {{giftCardOffer.expirationDate | timeRemaining: 'short'}}</span>
+            </div>
+          </div>
+          <!-- /.off -->
+          <div class="remain gaugeWrap">
+            <div data-mom-gauge class="gaugeEl" data-remain="giftCardOffer.availableQuantity"
+                 data-total="giftCardOffer.totalQuantity"></div>
+            <div class="gauge-label">${{giftCardOffer.availableQuantity}}</div>
+            <div class="gauge-caption">remain</div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </section>
+      <!-- Show more offers button -->
+      <section class="businessBlock clearfix" data-mom-tapstate
+               data-ng-if="vm.showAlternativeOffers"
+               data-ng-click="vm.cancelSearch();">
+        <figure class="busLogoWrap">
+          <img src="assets/i/add.png" class="thumb" alt=""/>
+        </figure>
+        <div class="infoWrap">
+          <div class="info">
+            <h3 class="name">More</h3>
+
+            <div class="meta">Load more interesting offers.</div>
+            <!-- /.meta -->
+          </div>
+        </div>
+        <div class="clear"></div>
+      </section>
+    </div>
+    <!-- /.blocksList -->
+    <div data-ng-if="vm.pause && vm.currentRecords != vm.totalRecords" class="load-more">
+      <div id="bowl-ring">
+        <div class="ball-holder">
+          <div class="ball">
+          </div>
+        </div>
+      </div>
+      <span>Loading more {{vm.loadRecords}} gift cards [from {{vm.totalRecords}}]</span>
+    </div>
+  </div>
+</div>
+
+
+

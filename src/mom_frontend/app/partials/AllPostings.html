@@ -1,0 +1,22 @@
+<div class="container history info">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+    
+  <!-- End Aside -->
+  <div class="main">
+  	<h2>F$ Postings</h2>
+      <ul class="header">
+          <li class="action">Business Name</li>
+          <li class="details">Discount</li>
+          <li class="amount">Quantity</li>
+      </ul>
+      <ul data-ng-repeat="offer in giftCardOffers" data-ng-click="popup(offer.id)" style="cursor: pointer">
+          <li class="action">{{offer.businessName}}</li>
+          <li class="details">{{offer.discount}}</li>
+          <li class="amount">{{offer.availableQuantity}}</li>
+      </ul>
+  </div>
+  <!-- End .main -->
+</div>
+<!-- End .container -->

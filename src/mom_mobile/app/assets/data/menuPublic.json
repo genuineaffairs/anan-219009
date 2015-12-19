@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Gift Card Offers",
+    "href": "",
+    "class": "mGiftCards"
+  },
+  {
+    "title": "How It Works",
+    "href": "how-it-works",
+    "class": "mWorks"
+  },
+  {
+    "title": "FAQ",
+    "href": "faq",
+    "class": "mFAQ"
+  },
+  {
+    "title": "Privacy",
+    "href": "privacy",
+    "class": "privacy"
+  },
+  {
+    "title": "Terms and Conditions",
+    "href": "terms",
+    "class": "terms"
+  },
+  {
+    "title": "Login",
+    "href": "login",
+    "class": "mLogin"
+  }
+]

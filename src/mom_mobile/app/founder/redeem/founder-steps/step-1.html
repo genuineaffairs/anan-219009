@@ -1,0 +1,40 @@
+<div id="business-step-1" class="business-step">
+    <div class="container">
+        <div class="content">
+            <!-- steps -->
+            <div class="steps">
+                <span class="step-point step-done">1</span>
+                <span class="step-line"></span>
+                <span class="step-point">2</span>
+                <span class="step-line"></span>
+                <span class="step-point">3</span>
+            </div>
+            <!-- end steps -->
+
+            <h2>Enter Receipt Total</h2>
+
+            <p>Please enter the amount to be redeemed from the Founder$hare</p>
+
+            <form novalidate name="stepOneForm">
+                <div class="form-group">$<input data-ng-model="valueHolder.redeemAmount" name="redeemAmount"
+                                                data-ng-focus="focusInput()"
+                                                data-ng-class="" type="number" placeholder="00.00"/></div>
+
+                <!-- validate error message -->
+                <div class="error-info" data-ng-show="showError">
+                    <span>{{validateErrorMsg}}</span>
+                </div>
+
+            </form>
+            <div class="controls">
+                <button class="btn btn-large btn-default"
+                        data-ng-click="cancelRedeem()">Cancel</button>
+                <button data-ng-click="goToStep2();"
+                        data-ng-disabled="!(valueHolder.redeemAmount > 0)"
+                        class="btn btn-large btn-primary next">Continue</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

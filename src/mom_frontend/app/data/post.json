@@ -1,0 +1,19 @@
+{
+	"post": [
+		{
+			"businessName": "Business Name",
+			"businessType": "Adventure",
+			"businessLocation": "LoremIpsum",
+			"logo": "./i/image.jpg",
+			"discount": "20",
+			"endDate": "01/01/2015",
+			"endTime": "10:00 PM",
+			"activationDate": "01/01/2015",
+			"activationTime": "10:00 PM",
+			"max": "5000",
+			"conditions": "Lorem ipsum dolor sit amet.",
+			"available": "800",
+			"description": "This description comes from the business. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet."
+		}
+	]	
+}

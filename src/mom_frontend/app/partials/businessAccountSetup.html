@@ -1,0 +1,13 @@
+<div class="container">
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+
+    <!-- End Aside -->
+    <div class="main account-setup">
+        <h2>Account Setup</h2>
+        <p data-ng-if="!business.isVerificationFeePaid">Join the community! Membership is $99 per month and can be cancelled at any time. We will set up your payment gateway at the same time so please have your EIN and bank account and routing number handy. It takes about 5 minutes to fill out the form. Click subscribe now to join.</p>
+        <a data-ng-if="!business.isVerificationFeePaid" href="#/Payment/business" class="btn btn-secondary">Subscribe Now</a>
+        <p data-ng-if="business.isVerificationFeePaid">You are already a member of the community and your account is setup properly. Enjoy your subscription. To cancel your subscription, please call 860.595.2422 or email us at support@foundershare.com.</p>
+    </div>
+    <!-- end main -->
+</div>
+<!-- End .container -->

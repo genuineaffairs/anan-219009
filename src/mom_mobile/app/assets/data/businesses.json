@@ -1,0 +1,221 @@
+{
+  "businesses": [
+    {
+      "id": 123,
+      "name": "Business Name 1",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/business-logo-1.png",
+      "redeem": [
+        {
+          "value": 100,
+          "discount": 20,
+          "qr": "assets/i/qr.png"
+        },
+        {
+          "value": 250,
+          "discount": 25,
+          "qr": "assets/i/qr.png"
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 200
+    },
+    {
+      "id": 124,
+      "name": "Business Name 2",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/business-logo-2.png",
+      "redeem": [{
+        "value": 100,
+        "discount": 20,
+        "qr": "assets/i/qr.png"
+      }],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 300
+    },
+    {
+      "id": 125,
+      "name": "Business Name 3",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/business-logo-3.png",
+      "redeem": [{
+        "value": 100,
+        "discount": 20,
+        "qr": "assets/i/qr.png"
+      }],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 120
+    },
+    {
+      "id": 126,
+      "name": "Business Name 4",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/business-logo-4.png",
+      "redeem": [{
+        "value": 100,
+        "discount": 20,
+        "qr": "assets/i/qr.png"
+      }],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 400
+    },
+    {
+      "id": 127,
+      "name": "Business Name 5",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/business-logo-1.png",
+      "redeem": [{
+        "value": 100,
+        "discount": 20,
+        "qr": "assets/i/qr.png"
+      }],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 150
+    },
+    {
+      "id": 128,
+      "name": "Test Search",
+      "founder": "Founder's Name",
+      "address": {
+        "address": "123 Main Street",
+        "city": "City",
+        "state": "State",
+        "index": 12345,
+        "position": {
+          "lat": -37.821780,
+          "lng": 144.978402
+        }
+      },
+      "activation": 1419318000000,
+      "expiration": null,
+      "phone": "1-800-123-4567",
+      "hours": {
+        "from": "00.00",
+        "to": "00.00"
+      },
+      "logo": "assets/i/qr.png",
+      "redeem": [{
+        "value": 100,
+        "discount": 20,
+        "qr": "assets/i/qr.png"
+      }],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.",
+      "conditions": [
+        "Lorem ipsum dolor sit amet",
+        "Consectetur adipiscing elit. Aenean euismod bibendum laoreet.",
+        "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo."
+      ],
+      "amount": 300
+    }
+  ]
+}

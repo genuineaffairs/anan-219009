@@ -1,0 +1,12 @@
+<div class="modalBg on notify-popup">
+    <div class="modal on">
+        <p>{{$message}}</p>
+        <button class="btn btn-secondary" data-ng-if="!notify.isConfirmation" data-ng-click="$close()">Ok</button>
+
+        <!-- Specific to switch role -->
+        <button class="btn btn-secondary" data-ng-if="notify.isConfirmation" data-ng-click="notify.ok()">Ok</button>
+        <button class="btn btn-secondary" data-ng-if="notify.isConfirmation" data-ng-click="$close()">Cancel</button>
+        <!-- ./Specific to switch role -->
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+
+
+
+window.config_local = {
+    REST_SERVICE_BASE_URL: 'http://www.foundershare.com:3000',
+    MOBILE_SERVICE_BASE_URL: 'http://www.foundershare.com:3501',
+    SHARE_THIS_PUBLISHER_KEY: 'b1693be36ac5f67cf7d4eedb77174710',
+    OAUTH_PUBLIC_KEY: 'iaHdWV9T9bHgiYm7WYiCimorvd0'
+};

@@ -1,0 +1,45 @@
+<div class="container emailReport">
+
+  <div class="main no-background">
+  	<h2>Report Abuse</h2>
+    <div class="form">
+      <form name="abuseForm" data-ng-submit="submitQuery()">
+        <div class="form-group">
+          <label for="issue">Issue</label>
+          <input type="text" name="issue" id="issue" maxlength="1024"
+          	data-ng-model="issue" 
+            data-ng-class="{'error':submitted && abuseForm.issue.$error.required}"
+            required="required" />
+        </div>
+        <!-- End .form-group -->
+        <div class="form-group last">
+          <label for="describe">Description</label>
+          <textarea id="describe" name="describe" maxlength="1024"
+          	data-ng-model="describe" 
+            data-ng-class="{'error':submitted && abuseForm.describe.$error.required}"
+            required="required">
+          </textarea>
+        </div>
+        <!-- End .form-group -->
+        <div class="button-group">
+        	<a href="javascript:;" class="btn btn-secondary" data-ng-click="send()">Send</a>
+        </div>
+        <!-- End .button-group -->
+      </form>
+     </div>
+  </div>
+  <!-- End .main -->
+  
+  <div class="modalBg" 
+  	data-ng-class="{'on':modal}"
+    data-ng-click="closeModal()"></div>
+  <div class="modal modal-report" data-ng-class="{'on':reportModal}">
+  	<p>Your report has been sent.</p>
+    <p>You'll be notified by email when this is solved.</p>
+    <div class="button-group">
+    	<a href="javascript:;" class="btn btn-secondary" data-ng-click="done()">Done</a>
+    </div>
+  </div>
+  
+</div>
+<!-- End .container -->

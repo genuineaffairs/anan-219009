@@ -1,0 +1,23 @@
+<aside>
+    <div class="profile">
+        <div class="thumb">
+            <img src="../i/thumb.png" ng-src="{{loggedUser.champion.picture ? loggedUser.champion.picture : ''}}" width="114" height="114" alt="Thumb"
+                 ng-if="!isFounder"/>
+            <img src="../i/thumb.png" ng-src="{{loggedUser.business.picture ? loggedUser.business.picture : ''}}" width="114" height="114" alt="Thumb"
+                 ng-if="isFounder"/>
+        </div>
+    </div>
+    <ul>
+        <li><a ng-class="{active: isActivePage('/myInfo') }" href="#/myInfo">My Info</a></li>
+        <li data-ng-if="isFounder || isUser"><a ng-class="{active: isActivePage('/Founder$hares') }" href="#/Founder$hares">My Founder$hares</a></li>
+        <li data-ng-if="isFounder"><a ng-class="{highlight: isActivePage('/Founder$hares') && emptyOffers }" href="#/FounderF$Posting">Create a Foundershare</a></li>
+        <li data-ng-if="isFounder || isUser"><a ng-class="{active: isActivePage('/history') }" href="#/history">My History</a></li>
+        <li data-ng-if="isFounder"><a ng-class="{active: isActivePage('/FounderMyEmployees') }" href="#/FounderMyEmployees">Employees</a></li>
+        <li data-ng-if="isFounder"><a ng-class="{active: isActivePage('/GiftCardSummary') }" href="#/GiftCardSummary">Gift Card Summary</a></li>
+        <li data-ng-if="isPlatformAdmin"><a ng-class="{active: isActivePage('/FounderStatus') }" href="#/FounderStatus">Founder Status</a></li>
+        <li data-ng-if="isFounder" data-ng-class="{important: !isVerificationFeePaid}"><a ng-class="{active: isActivePage('/BusinessAccountSetup') }" href="#/BusinessAccountSetup">Account Setup</a></li>
+        <li data-ng-if="isPlatformAdmin"><a ng-class="{active: isActivePage('/AllPostings') }" href="#/AllPostings">F$ postings</a></li>
+        <li data-ng-if="isPlatformAdmin"><a ng-class="{active: isActivePage('/AddPlatformAdmin') }" href="#/AddPlatformAdmin">Add Admins</a></li>
+	<li data-ng-if="isPlatformAdmin"><a ng-class="{active: isActivePage('/EditStaticPages') }" href="#/EditStaticPages">Edit Static Pages</a></li>
+    </ul>
+</aside>

@@ -1,0 +1,39 @@
+<script type="text/ng-template" id="twitter-autocomplete-template.html">
+    <a>
+        <img data-ng-src="{{match.model.profile_image_url_https}}">
+        <span bind-html-unsafe="match.model.name"></span>
+    </a>
+</script>
+
+<script type="text/ng-template" id="select-twitter-friends.html">
+    <header class="mhead">
+        <h3 class="heading alt">
+            <span>PLEASE FIND YOUR TWITTER FRIEND</span>
+        </h3>
+    </header>
+    <!-- /.mhead -->
+    <div class="rw twOverflow">
+        <input type="text" name="friends" class="textTwitterCtrl"
+               placeholder="Type your friend's name here"
+               data-ng-model="vm.selectedFriend"
+               typeahead-template-url="twitter-autocomplete-template.html"
+               typeahead="friend as friend.name for friend in vm.friends | filter:{name:$viewValue}"
+               typeahead-on-select="vm.friendSelected()"
+               data-ng-disabled = "vm.disabled"
+                >
+    </div>
+
+    <!--<div class="mcon ah">New Modal Content</div>-->
+    <!-- /.mcon -->
+    <footer class="actn tw">
+        <button class="btn btn-primary" data-ng-click="vm.cancel()">
+            Cancel
+        </button>
+        <button class="btn btn-submit" data-ng-click="vm.send()">
+            Send
+        </button>
+        <div class="clear"></div>
+    </footer>
+    <!-- /.actn -->
+
+</script>

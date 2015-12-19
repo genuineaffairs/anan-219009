@@ -1,0 +1,39 @@
+
+
+<ul>
+    <li>
+        <a class="shareOpt fb icon-toggle"
+           ng-class="{'icon-toggle-on': active.FACEBOOK}"
+           ng-click="toggle('FACEBOOK')"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="facebook"></a>
+    </li>
+    <li>
+        <a class="shareOpt tw icon-toggle"
+           ng-class="{'icon-toggle-on': active.TWITTER}"
+           ng-click="toggle('TWITTER')"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="twitter"></a>
+    </li>
+    <li>
+        <a class="shareOpt gp icon-toggle"
+           ng-click="shareGoogle()"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="googleplus"></a>
+    </li>
+    <li>
+        <a class="shareOpt in icon-toggle"
+           ng-class="{'icon-toggle-on': active.LINKEDIN}"
+           ng-click="toggle('LINKEDIN')"
+           analytics-on
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="linkedin"></a>
+    </li>
+</ul>

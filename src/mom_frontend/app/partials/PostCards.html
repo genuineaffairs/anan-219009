@@ -1,0 +1,98 @@
+<div class="container posting">
+
+  <div class="main no-background">
+  	<h2>Founder$hare Posting</h2>
+    <div class="button-group">
+      <a href="#/Founder$hares" class="btn btn-primary">Cancel</a>
+    </div>
+    <!-- End .button-group -->
+    <form class="form" name="form">
+    	<div 
+      	flow-init="{singleFile:true}" 
+    		flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
+        <div class="business-info business-info-other">
+          <div class="logo"><img src="../i/image.jpg" data-ng-src="{{post[0].logo}}" alt="Pic" flow-img="$flow.files[0]" /></div>
+          <!-- End .logo -->
+          <a href="javascript:;" class="link">{{post[0].businessName}}</a>
+          <div class="activation">Activation : {{post[0].activationDate + ' ' + post[0].activationTime}}</div>
+          <div class="info-bottom">
+            <div class="discount">
+              {{post[0].discount|percentage}}%<span>off</span>
+            </div>
+            <div class="date">{{(post[0].endDate + ' ' + post[0].endTime)|endDate}}</div>
+            <div class="percent">${{post[0].available}}<small>remain</small></div>
+          </div>
+        </div>
+        <!-- End .business-info -->
+        
+        <div class="tip discount discount-other">
+          <div class="inner">
+            <div class="form-group">
+              <label for="discount">Founder$hare Discount</label>
+              <input type="text" id="discount" data-ng-model="post[0].discount" numbers-only="numbers-only" required="required" max-number="100" />
+              <span>% Off</span>
+            </div>
+            <!-- End .form-group -->
+          </div>
+        </div>
+        <!-- End .tip -->
+        
+        <div class="tip max max-other">
+          <div class="inner">
+          	<div class="form-group clearfix">
+              <label for="max">Max Quantity Available</label>
+              <span class="long align-right">$<b data-ng-bind="post[0].max"></b></span>
+            </div>
+            <!-- End .form-group -->
+            <div class="form-group clearfix">
+              <label for="max">My Quantity</label>
+              <span>$</span>
+              <input type="text" id="max" data-ng-model="post[0].my" numbers-only="numbers-only" required="required" max-number="5000" />
+            </div>
+            <!-- End .form-group -->
+          </div>
+        </div>
+        <!-- End .tip -->
+      </div>
+      <div class="resale">
+      	<div class="tool">For Resale</div>
+        <div class="tip">
+        	<h3>Offer Description</h3>
+          <textarea disabled="disabled">{{post[0].description}}</textarea>
+        </div>
+      </div>
+      <!-- End .resale -->
+      <a href="javascript:;" class="btn btn-secondary btn-post" data-ng-click="postNow()">Post Now</a>
+    </form>
+    <!-- End .form -->
+  </div>
+  <!-- End .main -->
+  
+  <div class="modalBg" 
+  	data-ng-class="{'on': modal}"
+    data-ng-click="closeModal()"></div>
+  <div class="modal" data-ng-class="{'on': saveModal}">
+    <p>Your Founder$hare Posting is saved</p>
+    <div class="button-group">
+    	<a href="javascript:;" class="btn btn-secondary" data-ng-click="done()">Done</a>
+    </div>
+  </div>
+  <!-- End .modal -->
+  <div class="modal modal-post" data-ng-class="{'on': postModal}">
+    <p>Your Founder$hare Posting is Now Active</p>
+    <div class="bar">
+    	<dl>
+      	<dt>Share</dt>
+        <dd><a href="javascript:;" class="icon icon-f"></a></dd>
+        <dd><a href="javascript:;" class="icon icon-t"></a></dd>
+        <dd><a href="javascript:;" class="icon icon-g"></a></dd>
+        <dd><a href="javascript:;" class="icon icon-in"></a></dd>
+      </dl>
+    </div>
+    <div class="button-group">
+    	<a href="#/Founder$hares" class="btn btn-secondary">Done</a>
+    </div>
+  </div>
+  
+</div>
+<!-- End .container -->

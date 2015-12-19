@@ -1,0 +1,30 @@
+{
+    "nonew":true,
+    "curly":true,
+    "unused":true,
+    "noarg":true,
+    "trailing":true,
+    "indent":4,
+    "forin":true,
+    "noempty":true,
+    "eqeqeq":true,
+    "strict":true,
+    "undef":true,
+    "bitwise":true,
+    "browser":true,
+    "globals": {
+        "console": true,
+        "$": true,
+        "angular": true,
+        "alert": true,
+        "window": true,
+        "_": true,
+        "AWS": true,
+        "localStorage": true,
+        "document": true,
+        "EVENTS": true,
+        "moment": true,
+        "iChart": true,
+        "toastr": true
+    }
+}

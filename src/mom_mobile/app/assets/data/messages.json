@@ -1,0 +1,195 @@
+{
+    "messages": {
+        "id001": {
+            "id": "001",
+            "title": "ERROR #001",
+            "type": "alert",
+            "msgText": "Oops! Your payment didn't go through. You can give it another try, or let support know that you had a problem with payment."
+        },
+        "id004": {
+            "id": "004",
+            "title": "ERROR #004",
+            "type": "alert",
+            "msgText": "Oops. We were unable to share your story on social media. Please check back later or you can let support know that something funky is going on with social media sharing. Thank you!"
+        },
+        "id005": {
+            "id": "005",
+            "title": "ERROR #005",
+            "type": "alert",
+            "msgText": "To make a purchase, you need to be logged in. You can also create an account from the login page."
+        },
+        "id006": {
+            "id": "006",
+            "title": "Congrats Champ!",
+            "type": "rate",
+            "shareCategory": "purchased card",
+            "msgText": "Your gift card has been purchased. What will you buy with it? ;)",
+            "shareText": "I just got rewarded for shopping local. You can too! ",
+            "shareTextTw": "I just got rewarded for shopping local. You can too! foundershare.com",
+            "ratings": [{"question": "Please rate your experience with the app"}]
+        },
+        "id007": {
+            "id": "007",
+            "title": "CONGRATULATION",
+            "type": "success",
+            "msgText": "You successfully shared your payment story to social media!"
+        },        
+        "id008": {
+            "id": "008",
+            "title": "CONGRATULATION",
+            "type": "success",
+            "msgText": "You successfully emailed your payment story!"
+        },
+        "id009": {
+            "id": "009",
+            "title": "ERROR #006",
+            "type": "alert",
+            "msgText": "We failed to send the gift card to your friend. Please try it later, or you can contact our support to confirm about this. Thank you!"
+        },
+        "id010": {
+            "id": "010",
+            "title": "ERROR #010",
+            "type": "alert",
+            "msgText": "You need to login to comment. Do you want to continue?"
+        },
+        "id011": {
+            "id": "011",
+            "title": "ERROR #011",
+            "type": "alert",
+            "msgText": "Wait! The amazing gift card in your cart will be erased. Do you want to continue?"
+        },
+        "id012": {
+            "id": "012",
+            "title": "ERROR #012",
+            "type": "alert",
+            "msgText": "Server error. Cannot complete the operation."
+        },
+        "id013": {
+            "id": "013",
+            "title": "ERROR #013",
+            "type": "alert",
+            "msgText": "We failed to email your story. Please try it later, or you can contact our support to notify this. Thank you!"
+        },
+        "id014": {
+            "id": "014",
+            "title": "You are so thoughtful!",
+            "type": "success",
+            "msgText": "Your buddy just got an email with a link to this page."
+        },
+        "id015": {
+            "id": "015",
+            "title": "ERROR #015",
+            "type": "alert",
+            "msgText": "Ut-oh. We were unable to send this awesome gift card to your friend. You can give it another try or let support know that you're having trouble sending a gift."
+        },
+        "id016": {
+            "id": "016",
+            "title": "ERROR #016",
+            "type": "alert",
+            "msgText": "Error fetching twitter friends. Please try it later, or you can contact our support to notify this. Thank you!"
+        },
+        "id017": {
+            "id": "017",
+            "title": "ERROR #017",
+            "type": "alert",
+            "msgText": "Error fetching twitter friends. You have no twitter friends!"
+        },
+        "id018": {
+            "id": "018",
+            "title": "ERROR #018",
+            "type": "alert",
+            "msgText": "You made too many requests to Twitter. Please wait 15 min."
+        },
+        "id019": {
+            "id": "019",
+            "title": "ERROR #019",
+            "type": "alert",
+            "msgText": "You need to be a champion to add items to cart."
+        },
+        "id020": {
+            "id": "020",
+            "title": "Way to go, Champ!",
+            "type": "success",
+            "msgText": "You're awesome. Thanks for sharing :)"
+        },
+        "id021": {
+            "id": "021",
+            "title": "SUCCESS",
+            "type": "success",
+            "msgText": "Thanks for your reaching out to us. We'll get back to you soon!"
+        },
+        "id022": {
+            "id": "022",
+            "title": "ERROR #022",
+            "type": "alert",
+            "msgText": "Error sending issue to support. Please try again later."
+        },
+        "id023": {
+            "id": "023",
+            "title": "ERROR #023",
+            "type": "alert",
+            "msgText": "Error showing route. Please try it later, or you can contact our support to notify this. Thank you!"
+        },
+        "id024": {
+            "id": "024",
+            "title": "This gift card hasn't been redeemed yet. Don't worry, it'll be here when you're ready. Feel like shouting out for the local business anyway? We won't stop you! :)",
+            "type": "completed"
+        },
+        "id025": {
+            "id": "025",
+            "type": "rate",
+	    "ratings": [{"question": "Please rate your experience with the app"}],
+          "tmplShareText": "Have you discovered [business name]? Check them out on FounderShare. Shop local and get rewarded - it couldn't be easier.",
+          "tmplShareTextTw": "Shop local and get rewarded - it couldn't be easier. I discovered [business name] and you can too. foundershare.com",
+          "shareText": "Successful redemption"
+        },
+	"id026": {
+            "id": "026",
+            "title": "Your friend is going to be very excited! Way to go, champ!",
+            "shareCategory": "gifted card",
+           "shareText": "Someone special will be getting a FounderShare. I just sent a gift card for a great local business. Check your email to see if it was you!",
+            "shareTextTw": "Someone special will be getting a FounderShare. I just sent a gift card for a great local business. Check to see if it was you! foundershare.com",
+            "type": "rate",
+            "ratings": [{"question": "Please rate your experience with the app"}]
+        },
+	"id027": {
+	    "id": "027",
+	    "title": "ERROR #027",
+	    "type": "alert",
+	    "msgText": "Your sign up request could not be completed. Please try again later."
+	},
+	"id028": {
+            "id": "028",
+            "title": "You just got a gift! Think this is cool? Be sure to thank your friend and help spread the word!",
+            "shareCategory": "accepted gift",
+            "tmplShareText": "Aw, thanks! I can't wait to shop at [business name] with the FounderShare gift card someone special just sent me :)",
+            "tmplShareTextTw": "Aw, thanks! I can't wait to shop at [business name] with the FounderShare gift card someone special just sent me :) foundershare.com",
+            "type": "rate",
+	    "ratings": [{"question": "Please rate your experience with the app"}]
+        },
+        "id029": {
+            "id": "029",
+            "title": "ERROR #029",
+            "type": "alert",
+            "msgText": "It looks like you're trying to gift more than you have. Your gift needs to be less than or equal to the total."
+        },
+        "id030": {
+            "id": "030",
+            "title": "ERROR #030",
+            "type": "alert",
+            "msgText": "Whoops! Looks like you're trying to buy more than what's available."
+        },
+        "id031": {
+            "id": "031",
+            "title": "ERROR #031",
+            "type": "alert",
+            "msgText": "For now, gift card purchases have to be in whole dollar amounts (no cents)."
+        },
+        "id032": {
+            "id": "032",
+            "title": "ERROR #032",
+            "type": "alert",
+            "msgText": "For now, gifts have to be in whole dollar amounts (no cents)."
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<div id="details">
+    <div class="container">
+        <div class="business-entry" data-ng-click="expanded = !expanded">
+            <!-- title and logo -->
+            <div class="content entry-content">
+                <div class="business-logo">
+                    <img alt="Business Logo" src="assets/i/empty.gif" data-ng-src="{{giftCard.businessPicture}}"/>
+                </div>
+                <div class="business-title">
+                    <div class="business-title-container">
+                        <div class="business-name">{{giftCard.businessName}}</div>
+                        <div class="business-founder">{{giftCard.createdOn | date:'MM/dd/yyyy hh:mm a'}}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end title and logo -->
+            <!-- map -->
+            <div class="map">
+                <div class="map-canvas"></div>
+                <!-- address -->
+                <div class="address">
+                    <p>{{giftCard.businessStreetAddress}} {{giftCard.businessCity}}, {{giftCard.businessState}} {{giftCard.businessCountry}} {{giftCard.businessZip}}</p>
+                    <p ng-show="vm.showLocation">Only {{vm.duration}} away.
+                        <a data-ng-href="{{vm.url}}" target="_blank"> Show route.</a>
+                    </p>
+                </div>
+                <!-- end address -->
+            </div>
+            <!-- end map -->
+            <!-- details -->
+            <div class="details-time">
+                <div class="group phone">
+                    <div class="group-title">Phone</div>
+                    <a class="group-value" data-ng-href="tel:{{giftCard.businessTelephone}}">
+                        {{giftCard.businessTelephone}}
+                    </a>
+                </div>
+                <div class="group hours">
+                    <div class="group-title">Hours</div>
+                    <div class="group-value">{{vm.businessHours}}</div>
+                </div>
+                <div class="group activation">
+                    <div class="group-title">Activation Date</div>
+                    <div class="group-value">{{giftCardOffer.activationDateTime | date:'EEE, MMM d, yyyy'}}</div>
+                </div>
+                <div class="group expiration">
+                    <div class="group-title">Gift Card Never Expires</div>
+                </div>
+            </div>
+            <!-- end details -->
+
+            <!-- auxiliary details -->
+            <div class="details-aux content">
+                <!-- description -->
+                <div class="group">
+                    <div class="group-label">Description</div>
+                    <div>
+                        {{giftCard.description}}
+                    </div>
+                </div>
+                <!-- end description -->
+                <!-- conditions -->
+                <div class="group">
+                    <div class="group-label">Conditions</div>
+                    <div>
+                        {{giftCardOffer.platformConditions}}
+                        {{giftCardOffer.conditions}}
+                    </div>
+                </div>
+                <!-- end conditions -->
+            </div>
+            <!-- end auxiliary details -->
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,32 @@
+{
+	"founder": [
+		{
+			"icon": "logo-business.png",
+			"name": "Business Owner 1",
+			"step1st": true,
+			"step2rd": false,
+			"step3rd": false
+		},
+		{
+			"icon": "logo-business.png",
+			"name": "Business Owner 2",
+			"step1st": true,
+			"step2rd": true,
+			"step3rd": true
+		},
+		{
+			"icon": "logo-business.png",
+			"name": "Business Name",
+			"step1st": true,
+			"step2rd": true,
+			"step3rd": false
+		},
+		{
+			"icon": "logo-business.png",
+			"name": "Business Name",
+			"step1st": false,
+			"step2rd": false,
+			"step3rd": false
+		}
+	]	
+}

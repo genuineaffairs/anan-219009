@@ -1,0 +1,12 @@
+{
+	"urls": {
+        "terms_of_use" : "#/TermsAndConditions",
+        "faq" : "#/Faq",
+        "blog" : "#/Blog",
+        "how_it_works" : "#/HowItWorks",
+        "about_us" : "#/About",
+        "copyright" : "#/Copyright",
+        "privacy_policy" : "#/PrivacyPolicy",
+        "verify_pdf_form" : "#/VerifyPDFForm"
+    }
+}

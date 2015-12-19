@@ -1,0 +1,30 @@
+<div class="container-fluid" data-infinite-scroll="vm.loadMore()" data-infinite-scroll-parent="true">
+    <div class="clearfix">
+        <div class="historyLst" >
+          <section class="hel" data-ng-repeat="history in vm.historyList" data-ng-class="{odd: $odd, even: $even}">
+	    <img src="" class="type" data-ng-src="{{getHistoryTypeIcon(history.type)}}" width="75" height="75"/>
+	    <div class="details clearfix">
+                <h5 ng-if="vm.role == 'champion'" class="event">{{history.businessName}}</h5>
+                <div class="meta">
+                    <span class="occuredAt">{{history.timestamp | date: 'mediumDate'}}</span>
+                    <span class="amount">{{history.amount}}</span>
+		    <span class="recipient" data-ng-if="history.target && vm.role == 'champion'">
+		      <a href="{{vm.targetLink(history.target)}}">{{history.target}}</a>
+		    </span>
+		    <span class="recipient" data-ng-if="!history.target && vm.role == 'champion'">-</span>
+                </div>
+	    </div>
+            </section>
+        </div>
+        <!-- /.historyLst -->
+        <div data-ng-if="vm.pause && vm.historyList.length != vm.totalRecords" class="load-more">
+            <div id="bowl-ring">
+                <div class="ball-holder">
+                    <div class="ball">
+                    </div>
+                </div>
+            </div>
+            <span>Loading more {{vm.loadRecords}} gift cards [from {{vm.totalRecords}}]</span>
+        </div>
+    </div>
+</div>

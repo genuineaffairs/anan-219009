@@ -1,0 +1,158 @@
+<div class="sign-up sign-up-founder" ng-show="!isTermsMode">
+    <div class="wrapper">
+        <div class="main-container">
+            <h2>CREATE AN ACCOUNT</h2>
+
+            <form name="signUpForm" data-ng-class="{error: showError}">
+                <div class="form-group check-form-group">
+                    <!-- input form -->
+                    <select name="businessType" data-ng-model="businessType">
+                        <option value="" selected>Business Type</option>
+                        <option data-ng-repeat="type in businessTypes" value="{{type.id}}">{{type.name}}</option>
+                    </select>
+
+                    <div class="select-box-back-ground">
+                        <div></div>
+                    </div>
+                </div>
+
+                <!-- Business Name -->
+                <div class="form-group">
+                    <input id="bizName" name="bizName" placeholder="Business Name" data-ng-model="bizName" type="text"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.bizName)}"
+                           required/>
+                </div>
+
+                <!-- user First Name and user Last Name -->
+                <div class="form-group">
+                    <input id="bizFirstName" name="bizFirstName" placeholder="User First Name"
+                           data-ng-model="userFirstName" type="text" autocomplete="off" data-ng-disabled="isAddBusiness"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.bizFirstName)}"
+                           required/>
+                    <input id="bizLastName" name="bizLastName" placeholder="User Last Name"
+                           data-ng-model="userLastName" type="text" autocomplete="off" data-ng-disabled="isAddBusiness"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.bizLastName)}"
+                           required/>
+                </div>
+
+                <!-- email -->
+                <div class="form-group">
+                    <input id="mail" name="mail" type="email"
+                           data-ng-model="mail" placeholder="Email" autocomplete="off"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.mail)}" data-ng-disabled="isAddBusiness"
+                           data-ng-pattern="/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/" required/>
+                </div>
+
+                <!-- password -->
+                <div class="form-group">
+                    <input id="password" name="password" type="password" placeholder="Password"
+                           data-ng-model="password"
+                           data-ng-change="checkPassword()" data-ng-blur="checkPassword()"
+                           required data-ng-minlength="passwordLen" data-ng-disabled="isAddBusiness"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.password)}"
+                           autocomplete="off"/>
+                </div>
+
+
+                <!-- upload file -->
+                <div class="form-group">
+                    <input id="uploadFile" type="text" placeholder="Upload Photo/Logo (Optional)" accept="image/*" capture="camera"
+                           disabled="disabled"/>
+
+                    <div class="fileUpload btn btn-inactive">
+                        <span>Browse</span>
+                        <input id="uploadBtn" type="file" class="upload"/>
+                    </div>
+                </div>
+
+		<!-- subscribe newsletter -->
+                <div class="accept-terms-group vertical-align-subs">
+                    <div data-ng-click="toggleSubscribeNewsletter();" data-ng-class="{checked:isSubscribeNewsletter}"
+                         class="icon check-box  vertical-align-subs">
+                        <div class="icon sprite sprite-blue-tick"></div>
+                    </div>
+                    <span class="term-info">Subscribe me to Founder$hare newsletters</span>
+                </div>
+
+                <!-- terms and conditions -->
+                <div class="accept-terms-group vertical-align-subs">
+                    <div data-ng-click="toggleAcceptTerms();" data-ng-class="{checked:isAcceptTerms}"
+                         class="icon check-box  vertical-align-subs">
+                        <div class="icon sprite sprite-blue-tick"></div>
+                    </div>
+                    <span class="term-info">I accept <a href="javascript:" ng-click="showTerms()">Terms & Conditions</a></span>
+                </div>
+
+                <!-- validate error message -->
+                <div class="error-info" data-ng-show="signUpForm.$error">
+                    <span ng-show="signUpForm.bizName.$touched && signUpForm.bizName.$error.required">
+                        Business Name is required.<br>
+                    </span>
+                    <span ng-show="signUpForm.bizFirstName.$touched && signUpForm.bizFirstName.$error.required">
+                        User First Name is required.<br>
+                    </span>
+                    <span ng-show="signUpForm.bizLastName.$touched && signUpForm.bizLastName.$error.required">
+                        User Last Name is required.<br>
+                    </span>
+                    <span ng-show="signUpForm.mail.$touched">
+                        <span ng-show="signUpForm.mail.$error.required">
+                            Email Address is required.<br>
+                        </span>
+                        <span ng-show="signUpForm.mail.$error.pattern">
+                            Email Address is invalid.<br>
+                        </span>
+                    </span>
+                    <span ng-show="signUpForm.password.$touched">
+                        <span ng-show="signUpForm.password.$error.required">
+                            Password is required.<br>
+                        </span>
+                        <span ng-show="signUpForm.password.$error.minlength">
+                            The password must have "{{passwordLen}}" chars at least.<br>
+                        </span>
+                        <span ng-show="signUpForm.password.$error.badContent">
+                            The password must contain both numbers and chars.<br>
+                        </span>
+                    </span>
+                </div>
+
+                <!-- register button -->
+                <div class="controls" data-ng-if="!isAddBusiness">
+                    <input type="submit" class="hide">
+                    <a class="btn btn-primary btn-register"
+                       data-ng-class="{'btn-disable':isDisableRegister()}"
+                       data-ng-disabled="isDisableRegister()" href data-ng-click="register(accountTypes.founder)">Register</a>
+                </div>
+                <div class="controls" data-ng-if="isAddBusiness">
+                    <input type="submit" class="hide">
+                    <a class="btn btn-primary btn-register"
+                       data-ng-class="{'btn-disable':isDisableRegister()}"
+                       data-ng-disabled="isDisableRegister()" href data-ng-click="addBusiness()">Register</a>
+                </div>
+            </form>
+
+            <div class="sprite sprite-shadow-hspliter"></div>
+            <!-- social media -->
+            <div class="social-media-box" data-ng-if="!isAddBusiness">
+                <div>Or, <a data-ng-click="goToLogin()">Signup With FounderShare champion account</a></div>
+            </div><div class="social-media-box" data-ng-if="!isAddBusiness">
+                <div>Or, register with Social Media</div>
+                <div class="social-media-groups">
+                    <!-- facebook -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.facebook, accountTypes.founder)"
+                       class="social-media sprite facebook-icon"> </a>
+                    <!-- twitter -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.twitter, accountTypes.founder)"
+                       class="social-media sprite twitter-icon"> </a>
+                    <!-- linkedin -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.linkedin, accountTypes.founder)"
+                       class="social-media sprite linkedin-icon"> </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- End .main-container -->
+    </div>
+
+</div>
+
+<ng-include src="'common/static/terms.html'" ng-show="isTermsMode"></ng-include>

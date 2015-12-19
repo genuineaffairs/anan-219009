@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Home",
+    "href": "founder-home",
+    "class": "home"
+  },
+  {
+    "title": "My History",
+    "href": "business-history",
+    "class": "mHistory"
+  },
+  {
+    "title": "Privacy",
+    "href": "privacy",
+    "class": "privacy"
+  },
+  {
+    "title": "Terms and Conditions",
+    "href": "terms",
+    "class": "terms"
+  },
+  {
+    "title": "Contact Support",
+    "href": "contact-support",
+    "class": "mSupport"
+  },
+  {
+    "title": "Log Out",
+    "href": "logout",
+    "class": "mLogout"
+  }
+]

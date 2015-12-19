@@ -1,0 +1,46 @@
+<div id="qr-scan" class="business-step">
+    <div class="container">
+        <div class="content">
+            <!-- steps -->
+            <div class="steps">
+                <span class="step-point step-done">1</span>
+                <span class="step-line step-done"></span>
+                <span class="step-point step-done">2</span>
+                <span class="step-line"></span>
+                <span class="step-point">3</span>
+            </div>
+            <!-- end steps -->
+
+            <h2>Scan QR code</h2>
+            <p>Scan the QR code by taking a picture<br/>
+                with the camera.</p>
+
+            <!-- content before scan -->
+            <div data-ng-show="!scannedQR" capture-qr-code>
+                <!-- iPhone qr image input form -->
+                <form name="qr-post-form">
+                    <label class="scan-camera" data-ng-show="!userMedia">
+                        Tap to begin scanning
+                        <input type="file" capture="camera" accept="image/*" id="camera-input" data-ng-click="onFileUploadClicked()" name="qrCode"/>
+                    </label>
+                </form>
+                <!-- end iPhone qr image input form -->
+                <!-- Android qr image video -->
+                <div class="qr-reader" data-ng-show="userMedia">
+                    <video id="qr-reader-showcast" muted autoplay></video>
+                    <canvas id="qr-canvas"></canvas>
+                </div>
+                <!-- end Android qr image video -->
+            </div>
+            <!-- end content before scan -->
+            
+            <!-- controls -->
+            <div class="controls">
+              <button class="btn btn-large" data-ng-click="cancelRedeem()">Cancel</button>
+	      <img src="/assets/i/loading.gif" data-ng-show="showLoader">
+            </div>
+            <!-- end controls -->
+        </div>
+    </div>
+</div>
+

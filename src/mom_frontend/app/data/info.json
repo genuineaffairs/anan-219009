@@ -1,0 +1,104 @@
+{
+	"name" :{
+        "title": "Name",
+        "describe": "John Doe",
+        "public": true,
+        "type": "input"
+    },
+    "email" :{
+        "title": "Email",
+        "describe": "JohnDoe@loremipsum.com",
+        "public": false,
+        "type": "input"
+    },
+    "location" :{
+        "title": "Location",
+        "describe": "Lorem Ipsum",
+        "public": true,
+        "type": "input"
+    },
+    "photo": {
+        "title": "Photo/ Image",
+        "describe": "image.jpg",
+        "public": true,
+        "type": "file"
+    },
+	"business_name": {
+        "title": "Business Name",
+        "describe": "John Doe",
+        "public": true,
+        "type": "input"
+    },
+    "business_addr": {
+        "title": "Business Address",
+        "describe": "Business Address",
+        "public": false,
+        "type": "input"
+    },
+	"business_type": {
+        "title": "Business Type",
+        "describe": {
+            "name": "Retail",
+            "value":"Retail"
+        },
+        "public": false,
+        "type": "input"
+    },
+	"logo": {
+        "title": "Logo/ Image",
+        "describe": "image.jpg",
+        "public": true,
+        "type": "file"
+    },
+	"description": {
+        "title": "Description",
+        "describe": "Business description",
+        "public": true,
+        "type": "textarea"
+    },
+	"hours_open": {
+        "title": "Hours Open",
+        "describe": "00:00 - 00:00",
+        "public": true,
+        "type": "input"
+    },
+	"website" :{
+        "title": "Website URL",
+        "describe": "www.businessname.com",
+        "public": true,
+        "type": "input"
+    },
+	"business_tel": {
+        "title": "Business Telephone",
+        "describe": "123-1234",
+        "public": true,
+        "type": "input"
+    },
+    "payment_info" : {
+        "first_name": "John",
+        "last_name" : "Doe",
+        "email" : "JohnDoe@loremipsum.com",
+        "dob" : "12/24/1988",
+        "home_addr" : "123 Winding Road",
+        "city" : "Littletown",
+        "state" : "NY",
+        "zip" : "12345",
+        "funding": {
+            "descriptor" : " Business Name",
+            "destination" : "Bank Name",
+            "email" : " Funding@BusinessName.com",
+            "mobile" : "000-000-0000",
+            "account_no" : "1234567890",
+            "routing_no" : "1234567890"
+        },
+        "additional" : {
+            "legal_name" : "Business Name",
+            "dba_name" : "Business Name",
+            "tax" : " 00-1234567",
+            "addr" : " 1234 Busy Road",
+            "city" : "New York",
+            "state" : "NY",
+            "zip" : "123456"
+        }
+    }
+}

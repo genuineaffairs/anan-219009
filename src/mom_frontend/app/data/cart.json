@@ -1,0 +1,14 @@
+{
+	"carts": [
+		{
+			"name": "Business Name",
+			"logo": "./i/image.jpg",
+			"activation": "12/23/2014 10:00 PM",
+			"date": "No expiration date",
+			"max": "5000",
+			"available": "800",
+			"value": "$118.75",
+			"discount": "0.2"
+		}
+	]	
+}

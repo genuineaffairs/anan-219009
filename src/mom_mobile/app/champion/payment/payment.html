@@ -1,0 +1,30 @@
+<div class="paymentWrap">
+    <div class="giftCards">
+        <div class="container-fluid">
+
+            <div class="rw">
+                <div class="lbl"><strong>{{offerDetails.businessName}}</strong></div>
+                <div class="val"><strong>{{myCart.price | currency:"$ ":2}}</strong></div>
+                <div class="clear"></div>
+            </div>
+            <!-- /.rw -->
+            <div class="total">Total Value {{myCart.totalValue | currency:"$ ":2}}</div>
+            <!-- /.total -->
+        </div>
+    </div>
+    <!-- /.giftCards -->
+    <div class="paymentOpts">
+        Pay with a card
+    </div>
+    <!-- /.paymentOpts -->
+
+    <form method="post">
+        <section class="payWithCard" id="dropin-container"></section>
+        <div class="actn">
+            <button type="submit" class="btn btn-success" data-ng-click="disabled=true" data-ng-class="{disabled: disabled}" >Pay Now</button>
+        </div>
+        <!-- /.actn -->
+    </form>
+    <!-- /.payWithCard -->
+</div>
+<!-- /.paymentWrap -->

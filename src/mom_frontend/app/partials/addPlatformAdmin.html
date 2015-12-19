@@ -1,0 +1,36 @@
+<div class="container history info employee">
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+
+    <!-- End Aside -->
+    <div class="main">
+        <h2>Platform Employees</h2>
+        <div class="add-employee">
+            <input type="text" data-ng-model="user.firstName" placeholder="First name">
+            <input type="text" data-ng-model="user.email" placeholder="email">
+            <button class="add-employee" data-ng-click="addAdmin(user)">Add</button>
+        </div>
+        <ul class="header">
+            <li class="details text-center">First Name</li>
+            <li class="details last-name text-center">Last Name</li>
+            <li class="details email text-center">Email</li>
+        </ul>
+        <ul data-ng-repeat="admin in adminList">
+            <li class="details text-center">{{admin.firstName}}</li>
+            <li class="details last-name text-center">{{admin.lastName}}</li>
+            <li class="details email text-center">{{admin.email}}</li>
+            <a class="delete-employee" href data-ng-click="deleteAdmin(admin)">Delete</a>
+        </ul>
+    </div>
+    <!-- End .main -->
+
+    <div class="modalBg" data-ng-class="{'on': showPasswordModal}"></div>
+    <div class="modal modal-add-platform-admin" data-ng-class="{'on': showPasswordModal}">
+        <p>Enter your password to confirm</p>
+        <form novalidate>
+            <input name="password" type="password" placeholder="Password" class="textbox" ng-model="password" />
+            <button class="btn btn-primary" data-ng-click="submit()">Submit</button>
+            <button class="btn btn-primary" data-ng-click="closeModal()">Cancel</button>
+        </form>
+    </div>
+</div>
+<!-- End .container -->

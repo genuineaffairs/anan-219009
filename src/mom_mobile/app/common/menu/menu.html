@@ -1,0 +1,90 @@
+<div class="user-info" data-ng-if="util.isLoggedIn() && (!isUser)">
+    <!-- avatar -->
+    <div class="avatar">
+        <img src="assets/i/empty.gif" alt="User Avatar" data-ng-src="{{user.picture}}" ng-if="!user.business" width="84" height="84"/>
+        <img src="assets/i/empty.gif" alt="User Avatar" data-ng-src="{{user.business.picture}}" ng-if="user.business" width="84" height="84"/>
+    </div>
+    <!-- end avatar -->
+    <!-- greeting -->
+    <div class="greeting">
+        Hi, {{user.firstName}} {{user.lastName}}
+        <div class="title" data-ng-if="vm.role.hasDualRoles()" data-ng-click="vm.role.switch()"><a>Toggle to {{vm.role.nextRole()}}</a></div>
+    </div>
+    <!-- end greeting -->
+
+    <div data-ng-class="{'no-gift': !(user.cards && user.amount)}">
+        <!-- gift cards table -->
+        <table class="gift-cards">
+            <thead>
+            <tr>
+                <th>Total<br/>Founder$hares</th>
+                <th>Total<br/>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{user.cards}}</td>
+                <td>{{user.amount | currency:"$ ":2}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- end gift cards table -->
+        <!-- redeemed gauge -->
+        <div class="redeem">
+            <div class="redeem-content">
+                <div data-ng-include="'assets/svg/gauge.svg'"></div>
+                <div class="gauge-label">Founder<br/>$hares</div>
+                <div class="redeemed">{{user.redeemed}}% Redeemed</div>
+            </div>
+        </div>
+        <!-- end redeemed gauge -->
+    </div>
+</div>
+
+
+<div class="menuContainer">
+    <div class="userSn" data-ng-if="util.isLoggedIn() && isUser">
+        <div class="userInfo">
+            <figure class="userThumb">
+                <img src="assets/i/usrImg.png" data-ng-if="!user.business" data-ng-src="{{user.picture}}" class="img" alt="User Avatar" />
+            </figure>
+            <div class="info">
+                <div class="inner">
+                    <h4 class="name">{{user.firstName}} {{user.lastName}}</h4>
+                    <div class="title">{{user.title}}</div>
+                    <div class="title" data-ng-if="vm.role.hasDualRoles()" data-ng-click="vm.role.switch()"><a>Toggle to {{vm.role.nextRole()}}</a></div>
+                    <div class="title" data-ng-if="!vm.role.hasDualRoles() && isUser" data-ng-click="vm.signupAsBusiness()">
+                        <a href="#/sign-up-founder">Signup as Business Owner</a></div>
+                    <!-- /.title -->
+                </div>
+                <!-- /.inner -->
+            </div>
+        </div>
+        <!-- /.userInfo -->
+        <div class="amounts">
+            <div class="esn">
+                <div class="lbl">Total Amount Purchased</div>
+                <div class="val">{{user.amount | currency:"$ ":2}}</div>
+            </div>
+            <div class="esn">
+                <div class="lbl">Total Amount Redeemed</div>
+                <div class="val">{{user.redeemed | currency:"$ ":2}}</div>
+            </div>
+            <div class="clear"></div><!-- /.clear -->
+        </div>
+    </div>
+    <!-- /.userSn -->
+    <nav class="menuSn">
+        <ul class="lst">
+            <li data-ng-repeat="item in vm.menu" data-ng-hide="item.hide" data-ng-class="{'active': vm.isCurrentPath(item)}">
+                <a class="{{item.class}}" data-ng-href="#/{{item.href}}"
+                   data-ng-click="vm.menuClicked(item.title)">
+                    {{item.title}}
+                    <span class="count" data-ng-if="item.count">{{vm.getCount()}}</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.menuSn -->
+</div>
+<!-- /.menuContainer -->

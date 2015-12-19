@@ -1,0 +1,39 @@
+<div id="abuse">
+    <div class="container">
+        <div class="content" ng-form="contactSupport">
+            <!-- issue -->
+            <div class="group">
+                <label>
+                    <span class="group-label">Issue :</span>
+                    <span class="field"><span class="input">
+                        <input name="issue"
+                               required
+                               data-ng-model="vm.issue"/>
+                    </span>
+                    </span>
+                </label>
+            </div>
+            <!-- end issue -->
+            <!-- description -->
+            <div class="group">
+                <label>
+                    <span class="group-label">Description :</span>
+                    <textarea class="field" cols="30" rows="11" name="describe"
+                              required
+                              data-ng-model="vm.issueDescription">
+
+                    </textarea>
+                </label>
+            </div>
+            <!-- end description -->
+        </div>
+
+        <!-- controls -->
+        <div class="controls">
+            <button class="btn btn-success send"
+                    data-ng-click="vm.sendIssue()"
+                    data-ng-disabled="contactSupport.$invalid || vm.disable">Send</button>
+        </div>
+        <!-- end controls -->
+    </div>
+</div>

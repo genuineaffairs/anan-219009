@@ -1,0 +1,62 @@
+<!-- content -->
+<div class="containerWithAside">
+	<div class="login-form">
+		<div class="content">
+			<h3>Login</h3>
+			<p data-ng-if="loginError" class="login-error">{{errorMsg}}</p>
+			<form data-ng-submit="login()">
+				<input type="text" name="username" value="" placeholder="Email or Username" data-ng-model="username" data-ng-class="{error:loginError}">
+				<input type="password" name="password" value="" placeholder="Password" data-ng-model="password" data-ng-class="{error:loginError}">
+				<p class="remember-forgot">
+					<label>
+						<input type="checkbox" name="rememberMe" data-ng-model="rememberMe">
+						<i></i>
+						<span>Remember me</span>
+					</label>
+					<span class="forgot-pass"><a href="#/ForgotPassword">Forgot Password?</a></span>
+				</p>
+				<button type="submit" class="btn-continue">Continue</button>
+				<!-- Hidden submit button to enable form submit by enter key press -->
+				<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+				<!-- end mock up role -->
+				<p class="signup">Don't have an account? <a href="#/Register">Sign up now</a></p>
+			</form>
+			<span>or</span>
+		</div>
+		<div class="social">
+			<a href="javascript:;" data-ng-click="loginWithSocialNetwork('FACEBOOK')" class="face"><span class="icon-face"></span>Use My Facebook Account</a>
+			<a href="javascript:;" data-ng-click="loginWithSocialNetwork('TWITTER')" class="twitter"><span class="icon-twitter"></span>Use My Twitter Account</a>
+			<a href="javascript:;" data-ng-click="loginWithSocialNetwork('LINKEDIN')" class="linkedin"><span class="icon-linkedin"></span>Use My Linkedin Account</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+</div>
+<!-- end content -->
+
+<div class="choose-target-account-type" ng-if="accountTypeModal">
+	<h2 class="font-size48">CHOOSE ACCOUNT TYPE</h2>
+	<div class="choose-target-account-type__body">
+		<a href="javascript:" ng-click="closeAccountModal()"><img class="close-icon" src="../i/close.png" alt="close" ></a>
+
+
+		<div class="account-type-group">
+			<!-- champion account type icon with label -->
+			<a class="account-type-icon-with-label" href="javascript:" ng-click="chooseAccountType('CHAMPION')">
+				<div class="circle">
+					<div class="sprite sprite-champion"></div>
+				</div>
+				<div class="icon-label">CHAMPION</div>
+			</a>
+			<!-- founder account type icon with label -->
+			<a class="account-type-icon-with-label" href="javascript:" ng-click="chooseAccountType('FOUNDER')">
+				<div class="circle">
+					<div class="sprite sprite-founder"></div>
+				</div>
+				<div class="icon-label">BUSINESS OWNER</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<ng-include src="'partials/module/complete-registration.html'"></ng-include>

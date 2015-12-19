@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Gift Card Offers",
+    "href": "",
+    "class": "mGiftCards"
+  },
+  {
+    "title": "My F$ Wallet",
+    "href": "founder-shares",
+    "class": "mFounderShares"
+  },
+  {
+    "title": "My History",
+    "href": "champion-history",
+    "class": "mHistory"
+  },
+  {
+    "title": "My Cart",
+    "href": "my-cart",
+    "class": "mCart",
+    "hide": true,
+    "count": "0"
+  },
+  {
+    "title": "How It Works",
+    "href": "how-it-works",
+    "class": "mWorks"
+  },
+  {
+    "title": "FAQ",
+    "href": "faq",
+    "class": "mFAQ"
+  },
+  {
+    "title": "Privacy",
+    "href": "privacy",
+    "class": "privacy"
+  },
+  {
+    "title": "Terms and Conditions",
+    "href": "terms",
+    "class": "terms"
+  },
+  {
+    "title": "Contact Support",
+    "href": "contact-support",
+    "class": "mSupport"
+  },
+  {
+    "title": "Log Out",
+    "href": "logout",
+    "class": "mLogout"
+  }
+]

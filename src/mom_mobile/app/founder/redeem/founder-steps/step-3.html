@@ -1,0 +1,38 @@
+<div id="confirm" class="business-step">
+    <div class="container">
+        <div class="content">
+            <!-- steps -->
+            <div class="steps">
+                <span class="step-point step-done">1</span>
+                <span class="step-line step-done"></span>
+                <span class="step-point step-done">2</span>
+                <span class="step-line step-done"></span>
+                <span class="step-point step-done">3</span>
+            </div>
+            <!-- end steps -->
+
+            <h2>Confirm</h2>
+            <p>
+                Confirm to deduct the amount from the <br/>
+                Founder$hare.
+            </p>
+
+            <!-- content -->
+            <div class="deducted-amount">
+                <span>$</span>
+                <span class="field input">
+                    <input data-ng-model="amount" readonly="readonly"/>
+                </span>
+            </div>
+            <!-- end content -->
+
+            <!-- controls-->
+            <div class="controls">
+                <button class="btn btn-large" data-ng-click="cancelRedeem()">Cancel</button>
+                <button class="btn btn-success btn-large next" data-ng-click="finish()">Confirm</button>
+            </div>
+            <!-- end controls -->
+        </div>
+    </div>
+</div>
+

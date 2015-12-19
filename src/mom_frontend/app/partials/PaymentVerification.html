@@ -1,0 +1,152 @@
+<div class="container payment">
+
+  <div class="main no-background">
+  	<h2>Payment Verification</h2>
+      <div class="form">
+          <form name="form" novalidate>
+              <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="firstName" id="firstName"
+                         data-ng-class="{true: 'error'}[submitted && (form.firstName.$invalid)]"
+                         data-ng-model="firstName" maxlength="200"
+                         required="required" />
+              </div>
+              <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lastName" id="lastName"
+                         data-ng-class="{true: 'error'}[submitted && (form.lastName.$invalid)]"
+                         data-ng-model="lastName" maxlength="200"
+                         required="required" />
+              </div>
+              <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" name="individualEmail" id="individualEmail"
+                         data-ng-class="{true: 'error'}[submitted && (form.individualEmail.$invalid)]"
+                         data-ng-model="individualEmail" maxlength="200"
+                         required="required" />
+              </div>
+              <div class="form-group">
+                  <label>SSN</label>
+                  <input type="text" name="ssn" id="ssn"
+                         data-ng-class="{true: 'error'}[submitted && (form.ssn.$invalid)]"
+                         data-ng-model="ssn" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Date Of Birth</label>
+                  <input type="text" name="dateOfBirth" id="dateOfBirth"
+                         placeholder="YYYY-MM-DD"
+                         data-ng-class="{true: 'error'}[submitted && (form.dateOfBirth.$invalid)]"
+                         data-ng-model="dateOfBirth" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Street Address</label>
+                  <input type="text" name="streetAddress" id="streetAddress"
+                         data-ng-class="{true: 'error'}[submitted && (form.streetAddress.$invalid)]"
+                         data-ng-model="streetAddress" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>City</label>
+                  <input type="text" name="locality" id="locality"
+                         data-ng-class="{true: 'error'}[submitted && (form.locality.$invalid)]"
+                         data-ng-model="locality" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>ST</label>
+                  <input type="text" name="region" id="region"
+                         data-ng-class="{true: 'error'}[submitted && (form.region.$invalid)]"
+                         data-ng-model="region" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="text" name="postalCode" id="postalCode"
+                         data-ng-class="{true: 'error'}[submitted && (form.postalCode.$invalid)]"
+                         data-ng-model="postalCode" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Business Legal Name</label>
+                  <input type="text" name="legalName" id="legalName"
+                         data-ng-class="{true: 'error'}[submitted && (form.legalName.$invalid)]"
+                         data-ng-model="legalName" maxlength="200"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Business Tax ID</label>
+                  <input type="text" name="taxId" id="taxId"
+                         data-ng-class="{true: 'error'}[submitted && (form.taxId.$invalid)]"
+                         data-ng-model="taxId" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Funding Email</label>
+                  <input type="text" name="email" id="email"
+                         data-ng-class="{true: 'error'}[submitted && (form.email.$invalid)]"
+                         data-ng-model="email" maxlength="255"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Funding Mobile Phone</label>
+                  <input type="text" name="mobilePhone" id="mobilePhone"
+                         data-ng-class="{true: 'error'}[submitted && (form.mobilePhone.$invalid)]"
+                         data-ng-model="mobilePhone" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Funding Account Number</label>
+                  <input type="text" name="accountNumber" id="accountNumber"
+                         data-ng-class="{true: 'error'}[submitted && (form.accountNumber.$invalid)]"
+                         data-ng-model="accountNumber" maxlength="20"
+                         required="required" />
+              </div>
+
+              <div class="form-group">
+                  <label>Funding Routing Number</label>
+                  <input type="text" name="routingNumber" id="routingNumber"
+                         data-ng-class="{true: 'error'}[submitted && (form.routingNumber.$invalid)]"
+                         data-ng-model="routingNumber" maxlength="20"
+                         required="required" />
+              </div>
+
+
+
+              <!-- End .form-group -->
+              <div class="button-group">
+                  <a href="javascript:;" class="btn btn-secondary" data-ng-click="submit();" data-ng-class="{'disabled':submitFlag}">Submit</a>
+              </div>
+              <!-- End .button-group -->
+          </form>
+      </div>
+    <!-- End .main -->
+    <div class="modalBg" data-ng-class="{'on': modal}" data-ng-click="closeModal()"></div>
+    <div class="modal modal-post" data-ng-class="{'on': modal}">
+        <p>Transaction Completed!</p>
+        <div class="bar">
+            <dl>
+            <dt>Share</dt>
+            <dd><a href="javascript:;" class="icon icon-f" data-ng-click="shareUrl('facebook', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-t" data-ng-click="shareUrl('twitter', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-g" data-ng-click="shareUrl('googleplus', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-in" data-ng-click="shareUrl('linkedin', null, verificationName)"></a></dd>
+          </dl>
+        </div>
+        <div class="button-group">
+            <a href="#/Home" class="btn btn-secondary">Done</a>
+        </div>
+    </div>
+</div>
+<!-- End .container -->

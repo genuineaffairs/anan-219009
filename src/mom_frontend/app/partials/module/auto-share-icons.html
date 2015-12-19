@@ -1,0 +1,35 @@
+
+<dl>
+    <dt>Share</dt>
+    <dd><a href="javascript:;" 
+           ng-click="toggle('FACEBOOK')"
+           class="icon icon-f icon-toggle"
+           ng-class="{'icon-toggle-on': active.FACEBOOK}"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="facebook"></a></dd>
+    <dd><a href="javascript:;"
+           ng-click="toggle('TWITTER')"
+           class="icon icon-t icon-toggle"
+           ng-class="{'icon-toggle-on': active.TWITTER}"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="twitter"></a></dd>
+    <dd><a href="javascript:;"
+           ng-click="toggle('LINKEDIN')"
+           class="icon icon-in icon-toggle"
+           ng-class="{'icon-toggle-on': active.LINKEDIN}"
+           analytics-on 
+           analytics-event="{{shareCategory}}"
+           analytics-category="Sharing" 
+           analytics-label="linkedin"></a></dd>
+    <dd><a href="javascript:;"
+           class="icon icon-g icon-toggle"
+           ng-click="shareGoogle()"
+           analytics-on 
+           analytics-event="{{shareCategory}}" 
+           analytics-category="Sharing" 
+           analytics-label="googleplus"></a></dd>
+</dl>

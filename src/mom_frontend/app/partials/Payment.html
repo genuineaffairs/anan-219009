@@ -1,0 +1,29 @@
+<div class="container payment">
+
+  <div class="main no-background">
+  	<h2>Payment</h2>
+    <div class="form">
+        <form method="post">
+            <div id="dropin-container"></div>
+            <input type="submit" class="btn btn-secondary" style="width: 50px" value="Pay">
+        </form>
+    </div>
+    <!-- End .main -->
+    <div class="modalBg" data-ng-class="{'on': modal}" data-ng-click="closeModal()"></div>
+    <div class="modal modal-post" data-ng-class="{'on': modal}">
+        <p>Transaction Completed!</p>
+        <div class="bar">
+            <dl>
+            <dt>Share</dt>
+            <dd><a href="javascript:;" class="icon icon-f" data-ng-click="shareUrl('facebook', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-t" data-ng-click="shareUrl('twitter', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-g" data-ng-click="shareUrl('googleplus', null, verificationName)"></a></dd>
+            <dd><a href="javascript:;" class="icon icon-in" data-ng-click="shareUrl('linkedin', null, verificationName)"></a></dd>
+          </dl>
+        </div>
+        <div class="button-group">
+            <a href="#/Home" class="btn btn-secondary">Done</a>
+        </div>
+    </div>
+</div>
+<!-- End .container -->

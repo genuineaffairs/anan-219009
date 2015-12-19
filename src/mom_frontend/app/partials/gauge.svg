@@ -1,0 +1,54 @@
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"
+     width="64" height="64" data-ng-attr-width="{{gauge.r2}}" data-ng-attr-height="{{gauge.r2}}">
+    <defs>
+        <linearGradient id="grad1" data-ng-attr-id="grad{{gauge.nonce}}" spreadMethod="repeat"
+                        gradientUnits="userSpaceOnUse"
+                        x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#6cbe11"/>
+            <stop offset="5%" stop-color="#6cbe11"/>
+            <stop offset="5%" stop-color="#b8ec1d" />
+            <stop offset="10%" stop-color="#b8ec1d" />
+            <stop offset="10%" stop-color="#6cbe11"/>
+            <stop offset="15%" stop-color="#6cbe11"/>
+            <stop offset="15%" stop-color="#b8ec1d" />
+            <stop offset="20%" stop-color="#b8ec1d" />
+            <stop offset="20%" stop-color="#6cbe11"/>
+            <stop offset="25%" stop-color="#6cbe11"/>
+            <stop offset="25%" stop-color="#b8ec1d" />
+            <stop offset="30%" stop-color="#b8ec1d" />
+            <stop offset="30%" stop-color="#6cbe11"/>
+            <stop offset="35%" stop-color="#6cbe11"/>
+            <stop offset="35%" stop-color="#b8ec1d" />
+            <stop offset="40%" stop-color="#b8ec1d" />
+            <stop offset="40%" stop-color="#6cbe11"/>
+            <stop offset="45%" stop-color="#6cbe11"/>
+            <stop offset="45%" stop-color="#b8ec1d" />
+            <stop offset="50%" stop-color="#b8ec1d" />
+            <stop offset="50%" stop-color="#6cbe11"/>
+            <stop offset="55%" stop-color="#6cbe11"/>
+            <stop offset="55%" stop-color="#b8ec1d" />
+            <stop offset="60%" stop-color="#b8ec1d" />
+            <stop offset="60%" stop-color="#6cbe11"/>
+            <stop offset="65%" stop-color="#6cbe11"/>
+            <stop offset="65%" stop-color="#b8ec1d" />
+            <stop offset="70%" stop-color="#b8ec1d" />
+            <stop offset="70%" stop-color="#6cbe11"/>
+            <stop offset="75%" stop-color="#6cbe11"/>
+            <stop offset="75%" stop-color="#b8ec1d" />
+            <stop offset="80%" stop-color="#b8ec1d" />
+            <stop offset="80%" stop-color="#6cbe11"/>
+            <stop offset="85%" stop-color="#6cbe11"/>
+            <stop offset="85%" stop-color="#b8ec1d" />
+            <stop offset="90%" stop-color="#b8ec1d" />
+            <stop offset="90%" stop-color="#6cbe11"/>
+            <stop offset="95%" stop-color="#6cbe11"/>
+            <stop offset="95%" stop-color="#b8ec1d" />
+            <stop offset="100%" stop-color="#b8ec1d" />
+        </linearGradient>
+    </defs>
+    <circle r="29" cx="32" cy="32" stroke-width="5" stroke="#257149" data-ng-attr-stroke="{{gauge.color}}" data-ng-attr-r="{{gauge.ri}}"
+            data-ng-attr-cx="{{gauge.r}}" data-ng-attr-cy="{{gauge.r}}"
+            fill="none"/>
+    <path data-ng-attr-d="M{{gauge.r}} 3 A{{gauge.ri}} {{gauge.ri}} 0 {{gauge.largeFlag}} 1 {{gauge.x}} {{gauge.y}}" stroke="url(#grad{{gauge.nonce}})"
+          stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

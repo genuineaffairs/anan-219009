@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <div class="offerDetailsWrap">
+        <section class="businessBlock offerDetail">
+            <figure class="busLogoWrap">
+                <img  src="assets/i/px.png" class="thumb" alt="" data-ng-src="{{offerDetails.businessPicture}}" />
+            </figure>
+            <div class="infoWrap">
+                <div class="info addCart">
+                    <h3 class="name">{{offerDetails.businessName}}</h3>
+                    <div class="address">
+                        {{offerDetails.businessStreetAddress}},
+                        <br/>{{offerDetails.businessCity}}, {{offerDetails.businessState}} {{offerDetails.businessZip}}
+                        <br/>
+                            <span data-ng-if="!isUser">{{offerDetails.businessTelephone}}</span>
+                            <a data-ng-if="isUser" data-ng-href="tel:{{offerDetails.businessTelephone}}">
+                                {{offerDetails.businessTelephone}}
+                            </a>
+                    </div>
+                    <br/>
+                    <p class="website-link">
+                        Website: <a href="{{offerDetails.businessWebsite}}" target="_blank">{{offerDetails.businessWebsite}}</a>
+                    </p>
+                    <!-- /.address -->
+                </div>
+                <!-- /.info -->
+            </div>
+	    <div class="actn">
+
+	      <!-- temporary: [PMP-178]
+                   <button class="btn btn-success btn-cart" data-ng-click="vm.addToCart()">Add to Cart</button>
+		   -->
+	      <!-- begin temporary: [PMP-178] -->
+
+	      <div class="rw value" data-ng-show="vm.showBuyNow">
+		<label>Total Value ($)</label>
+		<div data-slider class="slider" data-ng-if="!isNaN(buyNowDetails.value) && offerDetails" data-ng-model="buyNowDetails.value" data-max="offerDetails.availableQuantity" data-min="buyNowDetails.min"></div>
+		<span class="input">
+		  $<input type="number" data-ng-class="{error: buyNowDetails.invalid}" data-ng-model="buyNowDetails.value" data-ng-focus="buyNowDetails.invalid = false" data-ng-change="vm.checkBuyNowValue()" max="{{offerDetails.availableQuantity}}" min="{{buyNowDetails.min}}" required="required"/>
+		</span>
+	      </div>
+	      <div class="rw price" data-ng-show="vm.showBuyNow">
+		<button class="btn btn-success btn-cart" data-ng-click="vm.buyNow()" data-ng-show="vm.showBuyNow">Buy Now</button>
+		<span>PRICE<br/>${{(buyNowDetails.value || 0)*(100-offerDetails.discount) / 100 | number:2}}</span>
+	      </div>
+	      <!-- end temporary: [PMP-178] -->
+            </div>
+            <div class="more">
+                <div class="off">
+                    <div class="per"><span class="val">{{offerDetails.discount}}% </span><sup>off</sup></div>
+                    <!-- /.per -->
+                    <div class="expiry">
+                        <span>Gift Card Never Expires</span>
+                    </div>
+                </div>
+                <!-- /.off -->
+                <div class="remain gaugeWrap">
+                    <div data-ng-if="offerDetails.availableQuantity" data-mom-gauge data-gstyle="vm.gaugestyle"
+                         class="gaugeEl" data-remain="offerDetails.availableQuantity" data-total="offerDetails.totalQuantity"></div>
+                    <div class="gauge-label">${{offerDetails.availableQuantity}}</div>
+                    <div class="gauge-caption">remain</div>
+                </div>
+                <!-- gaugeWrap -->
+                <div class="clear"></div>
+                <div class="rows">
+                    <div class="rw">
+                        <div class="lbl">Amount Sold</div>
+                        <div class="val">{{(offerDetails.totalQuantity - offerDetails.availableQuantity) | currency:"$ ":2}}</div>
+                    </div>
+                    <div class="rw">
+                        <div class="lbl">Days Remaining</div>
+                        <div class="val">{{vm.daysRemaining}}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.more -->
+            <div class="timeline">
+                <div class="rw">
+                    <div class="lbl">Creation Date</div>
+                    <div class="val">{{offerDetails.createdOn | date:longDateFormat}}</div>
+                </div>
+                <div class="rw">
+                    <div class="lbl">Activation Date</div>
+                    <div class="val">{{offerDetails.activationDateTime | date:longDateFormat}}</div>
+                </div>
+            </div>
+            <!-- /.timeline -->
+            <div class="clear"></div>
+        </section>
+    </div>
+    <!-- /.offerDetailsWrap -->
+</div>
+
+<!-- map -->
+<figure class="map overviewDetails">
+    <div class="map-canvas"></div>
+    <!-- address -->
+    <div class="figCaption">
+        <p>{{offerDetails.businessStreetAddress}}, {{offerDetails.businessCity}}, {{offerDetails.businessState}} {{offerDetails.businessZip}}</p>
+    </div>
+    <!-- /.figCaption -->
+    <!-- end address -->
+</figure>
+
+<div class="container-fluid overviewDetails">
+    <div class="hours">
+        <div class="owrap">
+            Hours : {{vm.businessHours}}
+        </div>
+    </div>
+    <!-- /.hours -->
+    <div class="owrap rounded">
+        <section class="desc">
+            <h4 class="title">Description</h4>
+            <div class="dcon">{{offerDetails.description}}
+            </div>
+            <!-- /.dcon -->
+        </section>
+        <section class="desc">
+            <h4 class="title">Conditions</h4>
+	    <ul class="conditions lst">
+	      <li data-ng-repeat="condition in conditions">{{condition}}</li>
+	    </ul>
+        </section>
+        <section class="desc">
+            <h4 class="title">Comment</h4>
+            <div class="commentList" data-ng-class="{'closed':vm.commentsClosed}">
+                <h4 class="heading" data-ng-click="vm.commentsClosed = !vm.commentsClosed">{{offerDetails.comments.length}} comment</h4>
+                <a class="toggleArrow" data-ng-click="vm.commentsClosed = !vm.commentsClosed"></a>
+                <ul class="lst">
+                    <li data-ng-repeat="comment in offerDetails.comments">
+                        <div class="usr"><a>{{comment.username}}</a></div>
+                        <!-- /.usr -->
+                        <div class="postedOn">{{comment.timestamp | date:'EEEE MM/dd/yyyy - HH:mm'}}</div>
+                        <div class="comment">{{comment.comment}}</div>
+                    </li>
+                </ul>
+                <!-- /.lst -->
+            </div>
+            <form class="frm" name="commentForm" data-ng-submit="vm.submitComment()">
+                <div class="rw error" data-ng-show="(commentForm.comment.$error.maxlength)">Comment should contain
+                    max 1024 characters.</div>
+                <textarea name="comment" class="textarea" data-ng-model="vm.comment"
+                          required data-ng-maxlength="1024"
+                          placeholder="Add a comment"></textarea>
+                <div class="actn">
+                    <button class="btn btn-submit" data-ng-disabled="commentForm.$invalid">Submit Comment</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<!-- /.container-fluid -->

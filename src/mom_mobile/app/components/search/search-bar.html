@@ -1,0 +1,33 @@
+<!-- search -->
+<div class="search search-old" data-ng-controller="SearchCtrl">
+    <!-- order selector -->
+    <div class="order" data-ng-show="sort.mode == 'order'">
+        Order by
+        <div class="btn-group order-dropdown" data-dropdown="">
+            <button type="button" class="btn btn-primary btn-medium order-toggle dropdown-toggle" data-dropdown-toggle="">
+                {{sort.orderTitle || 'Select Order Type'}}
+                <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu" role="menu">
+                <ul role="menu">
+                    <li class="item" data-ng-repeat="item in sort.orders" data-ng-click="sort.setOrder(item)">
+                        {{item.title}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <span class="search-toggle" data-ng-click="sort.setMode('searching')"></span>
+    </div>
+    <!-- end order selector -->
+    <!-- search input -->
+    <div class="searching" data-ng-show="sort.mode == 'searching'">
+        <button class="btn btn-success btn-small cancel-search"  data-ng-click="search.cancel()">cancel</button>
+        <label class="input">
+            <span class="do-search"></span>
+            <input data-ng-model="search.businessName" placeholder="Type your keyword" data-ng-keyup="search.checkEnter($event)"/>
+            <span class="clear" data-ng-click="search.clear()"></span>
+        </label>
+    </div>
+    <!-- end search input -->
+</div>
+<!-- end search -->

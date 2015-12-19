@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="rw" data-ng-show="offerDetails === null">
+        <div class="name lbl">Cart is empty</div>
+    </div>
+    <div class="mycartWrap" data-ng-if="offerDetails !== null">
+        <section class="businessBlock sticky">
+            <figure class="busLogoWrap">
+                <img src="assets/i/px.png" class="thumb" data-ng-src="{{offerDetails.businessPicture}}" alt="" />
+            </figure>
+            <div class="infoWrap">
+                <div class="info">
+                    <h3 class="name">{{offerDetails.businessName}}</h3>
+                    <div class="meta">Activation: {{offerDetails.createdOn | date:longDateFormat}}</div>
+                    <!-- /.meta -->
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="more normal">
+                <div class="off">
+                    <div class="per"><span class="val">{{offerDetails.discount}}% </span><sup>off</sup></div>
+                    <!-- /.per -->
+                    <div class="expiry">
+                        <span data-ng-if="!offerDetails.expirationDate || offerDetails.expirationDate===null">Gift Card Never Expires</span>
+                        <span data-ng-if="offerDetails.expirationDate && offerDetails.expirationDate!==null">{{offerDetails.expirationDate | date: medium}}</span>
+                    </div>
+                </div>
+                <!-- /.off -->
+                <div class="remain gaugeWrap">
+                    <div data-ng-if="offerDetails.availableQuantity" data-mom-gauge class="gaugeEl"
+                         data-remain="offerDetails.availableQuantity" data-total="offerDetails.totalQuantity"></div>
+                    <div class="gauge-label alt">{{offerDetails.availableQuantity | currency:"$ ":2}}</div>
+                    <div class="gauge-caption">remain</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        <!-- /.businessBlock -->
+        <form class="frmCart" name="cartForm">
+            <div class="rw error" data-ng-if="(cartForm.Total.$dirty && cartForm.Total.$invalid)">Total value should be between 1 and {{vm.maxQuantity}}</div>
+            <div class="rw">
+                <div class="lbl">Available </div>
+                <div class="val">
+                    <input type="text" name="Available" data-ng-model="vm.available" class="textCtrl"
+                            disabled/>
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Discount</div>
+                <div class="val">
+                    <input type="text" name="Discount" data-ng-model="vm.discount" class="textCtrl"
+                            disabled/>
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Total Value ($)</div>
+                <div class="val">
+                    <input type="number" data-ng-class="{'error': (cartForm.Total.$dirty && cartForm.Total.$invalid)}" data-ng-change="vm.updatePrice();"
+                           name="Total" data-ng-max="offerDetails.availableQuantity"
+                           required
+                           strict-integer
+                           data-ng-min="1"
+                           data-ng-model="myCart.totalValue" class="textCtrl alt" />
+                </div>
+            </div>
+            <!-- /.rw -->
+            <div class="rw">
+                <div class="lbl">Price ($)</div>
+                <div class="val">
+                    <input type="number" name="Price" data-ng-model="myCart.price" class="textCtrl"
+                            disabled/>
+                </div>
+            </div>
+            <!-- /.rw -->
+        </form>
+        <!-- /.frmCart -->
+        <div class="actn">
+            <button class="btn btn-success" data-ng-class="{'disabled':cartForm.$invalid}" data-ng-click="vm.paynow()">Pay Now</button>
+        </div>
+        <!-- /.actn -->
+    </div>
+    <!-- /.mycartWrap -->
+</div>

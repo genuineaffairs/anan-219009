@@ -1,0 +1,23 @@
+<div class="choose-target-account-type complete-registration" ng-show="completeRegistrationModal">
+    <h2 class="font-size48">COMPLETE REGISTRATION</h2>
+    <form name="completeForm" ng-submit="completeRegistration(completeForm, completeRegistrationEmail)" class="choose-target-account-type__body complete-registration__body" novalidate>
+        <a href="javascript:" ng-click="closeRegistrationModal()"><img class="close-icon" src="../i/close.png" alt="close" ></a>
+
+        <p>Thanks for registering with your Twitter account. <br/> Please enter your email address to complete your registration.</p>
+        <input name="email" type="email" required placeholder="Email address" class="textbox" ng-model="completeRegistrationEmail" />
+
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="modalBg" data-ng-class="{'on': modal}" data-ng-click="closeModal()"></div>
+<div class="modal modal-post" data-ng-class="{'on': modal}">
+    <div>Complete Registration</div>
+    <div class="bar">
+        <span>You have successfully registered.
+            <span data-ng-if="accountType.name === 'FOUNDER'">We have also granted Champion account for you.</span> <br/>
+            Please check your e-mail for the confirmation message and follow its instructions.</span>
+    </div>
+    <div class="button-group">
+        <a href="javascript:" class="btn btn-secondary" data-ng-click="closeModal()">Done</a>
+    </div>
+</div>

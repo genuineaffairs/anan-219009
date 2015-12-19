@@ -1,0 +1,238 @@
+<div class="modalWrap" data-ng-show="vm.flagLogInRequired">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn">
+            <button class="btn btn-primary" data-ng-click="fn.close('flagLogInRequired', false)">
+                Cancel
+            </button>
+            <button class="btn btn-success btn-login" data-ng-click="fn.redirect('flagLogInRequired','/login')">
+                Login Now
+            </button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.modalWrap -->
+
+<div class="modalWrap" data-ng-show="vm.flagContinue">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn">
+            <button class="btn btn-primary" data-ng-click="fn.close('flagContinue', false)">
+                Cancel
+            </button>
+            <button class="btn btn-success btn-login" data-ng-click="fn.close('flagContinue', true)">
+                Continue
+            </button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.modalWrap -->
+
+<div class="modalWrap successModal" data-ng-show="vm.flagSuccessModal">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                {{vm.currentMessage.title}}
+            </h3>
+        </header>
+        <!-- /.mhead -->
+	<div class="mcon ah" data-ng-if="!!vm.currentMessage.msgText">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <div class="shareOn">
+            <div class="inner">
+                <span class="lbl">Share on :</span>
+                <ul>
+                    <li>
+                        <a class="shareOpt fb" data-ng-click="fn.shareOn('flagSuccessModal', 'facebook')"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt tw" data-ng-click="fn.shareOn('flagSuccessModal', 'twitter')"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt gp" data-ng-click="fn.shareOn('flagSuccessModal', 'googleplus')"></a>
+                    </li>
+                    <li>
+                        <a class="shareOpt in" data-ng-click="fn.shareOn('flagSuccessModal', 'linkedin')"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.inner -->
+        </div>
+        <footer class="actn">
+            <button class="btn btn-submit" data-ng-click="fn.close('flagSuccessModal', true)">Done</button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.successModal -->
+
+<div class="modalWrap errModal zp" data-ng-show="vm.flagErrorModal">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon wider">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn ls">
+            <button class="btn btn-primary" data-ng-click="fn.close('flagErrorModal', false)">Cancel</button>
+            <button class="btn btn-success btn-login" data-ng-click="fn.redirect('flagErrorModal', '/contact-support')">
+                Contact Support
+            </button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.errModal -->
+
+<div class="modalWrap successModal" data-ng-show="vm.flagShareSuccess">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading alt">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon ah">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn">
+            <button class="btn fluid btn-submit" data-ng-click="fn.close('flagShareSuccess', true)">
+                Done
+            </button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.successModal -->
+
+
+<div class="sharePopup" data-ng-show="vm.flagOpenShare">
+    <div class="shareRw">
+        <div class="lbl">Share on :</div>
+        <!-- /.lbl -->
+        <ul class="shareOpts">
+            <li>
+                <a class="fb" data-ng-click="fn.shareOn('flagOpenShare', 'facebook')"></a>
+            </li>
+            <li>
+                <a class="tw" data-ng-click="fn.shareOn('flagOpenShare', 'twitter')"></a>
+            </li>
+            <li>
+                <a class="gp" data-ng-click="fn.shareOn('flagOpenShare', 'googleplus')"></a>
+            </li>
+            <li>
+                <a class="in" data-ng-click="fn.shareOn('flagOpenShare', 'linkedin')"></a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.shareRw -->
+    <div class="link" ng-form="sendEmail">
+        <h6>Email :</h6>
+        <div class="rw">
+            <input type="email" name="link" class="textCtrl"
+                   data-ng-model="fn.email"
+                   data-ng-pattern="/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/"/>
+        </div>
+        <div class="actn">
+            <a class="btn btn-submit fluid" data-ng-disabled="sendEmail.link.$invalid"
+               data-ng-click="fn.sendEmail('flagOpenShare')">Send to friend</a>
+        </div>
+    </div>
+    <span class="arrow"></span>
+</div>
+<!-- /.sharePopup -->
+
+<div class="modalWrap errModal zp" data-ng-show="vm.flagErrorSupport">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon wider">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+        <footer class="actn ls">
+            <button class="btn btn-primary" data-ng-click="fn.close('flagErrorSupport', false)">Cancel</button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.errModal -->
+
+<div class="modalWrap" data-ng-show="vm.flagRateAppModal">
+    <div class="modal modal-{{vm.currentMessage.type}}">
+        <header class="mhead">
+            <h3 class="heading">
+                <span class="ico ico-{{vm.currentMessage.type}}">{{vm.currentMessage.title}}</span>
+            </h3>
+        </header>
+        <!-- /.mhead -->
+        <div class="mcon">{{vm.currentMessage.msgText}}</div>
+        <!-- /.mcon -->
+	<div class="shareOn">
+            <div class="inner">
+                <span class="lbl">Share on :</span>
+
+                <mom-auto-share share-category="shareCategory" share-text="vm.currentMessage.shareText" share-text-tw="vm.currentMessage.shareTextTw"></mom-auto-share>
+                
+            </div>
+            <!-- /.inner -->
+        </div>
+	<div class="rate">
+	  <ol>
+	    <li data-ng-repeat="rating in vm.currentMessage.ratings">
+	      <span>{{rating.question}}</span>
+	      <div class="selector">
+		<label for="rating_q{{$index}}_awful" class="awful" data-ng-class="{selected: rating.rating === 1}" data-ng-click="fn.toggleRating(rating, 1)">
+		  Awful
+		</label>
+		<label for="rating_q{{$index}}_notbad" class="notbad" data-ng-class="{selected: rating.rating === 2}" data-ng-click="fn.toggleRating(rating, 2)">
+		  Not Bad
+		</label>
+		<label for="rating_q{{$index}}_awesome" class="awesome" data-ng-class="{selected: rating.rating === 3}" data-ng-click="fn.toggleRating(rating, 3)">
+		  Awesome
+		</label>
+	      </div>
+	</div>
+        <footer class="actn">
+            <button class="btn btn-success btn-login" mom-fire-auto-share data-ng-click="fn.closeRating(true)">
+                Continue
+            </button>
+            <div class="clear"></div>
+        </footer>
+        <!-- /.actn -->
+    </div>
+    <!-- /.modal -->
+</div>
+<!-- /.modalWrap -->

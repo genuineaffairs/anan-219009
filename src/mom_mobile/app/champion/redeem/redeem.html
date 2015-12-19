@@ -1,0 +1,32 @@
+<div class="qrWrap">
+    <h2 class="busName">{{giftCard.businessName}}</h2>
+    <!-- /.busNmae -->
+    <figure id="qrimage" class="qrCodeWrap">
+        <!--<img src="i/px.png" data-ng-src="{{qr.qrCodeImage}}" alt="" />-->
+    </figure>
+    <div class="container-fluid">
+        <div class="info">
+            <div class="rw">
+                <div class="value gsn">
+                    <div class="inner">
+                        <div class="lbl">value</div>
+                        <div class="vl">{{giftCard.quantity | currency:"$ ":2}}</div>
+                    </div>
+                    <!-- /.inner -->
+                </div>
+                <!-- /.value -->
+                <div class="clear"></div>
+                <!-- /.clear -->
+            </div>
+            <!-- /.rw -->
+            <div class="actn">
+                <a data-ng-click="vm.done()" class="btn btn-success">Done</a>
+            </div>
+            <!-- /.actn -->
+        </div>
+        <!-- /.info -->
+    </div>
+    <!-- /.qrWrap -->
+</div>
+
+

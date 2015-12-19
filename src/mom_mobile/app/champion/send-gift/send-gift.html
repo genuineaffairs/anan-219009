@@ -1,0 +1,70 @@
+<div class="giftingWrap paymentWrap">
+    <div class="giftCards">
+        <div class="container-fluid">
+
+            <div class="rw">
+                <div class="lbl"><strong>{{giftCard.businessName}}</strong></div>
+                <div class="clear"></div>
+            </div>
+            <!-- /.rw -->
+            <div class="total">Available {{giftCard.quantity | currency:"$ ":2}}</div>
+            <!-- /.total -->
+        </div>
+    </div>
+    <!-- /.giftCards -->
+
+    <section class="payWithCard">
+
+        <form class="frmPayment" name="giftingForm">
+            <div class="rw gifting-slider">
+                <div class="lbl">Gifting Amount ($)</div>
+                <div class="val">
+                    <label class="input amt float-right">
+                        $<input type="number" data-ng-model="gifting.amount" data-ng-change="vm.checkGiftValue()" max="{{giftCard.quantity}}" min="1"/>
+                    </label>
+                    <div data-slider class="slider"
+                         data-ng-model="gifting.amount"
+                         data-max="giftCard.quantity" data-min="1"></div>
+                </div>
+            </div>
+            <div class="rw">
+                <div class="lbl">Recipient</div>
+                <div class="val">
+                    <input type="text" name="emailorphone" class="textCtrl borderless"
+                           placeholder="email address or phone number"
+                           data-ng-model="gifting.receipt"
+                           data-mom-email-or-phone
+                           data-ng-if="!vm.selectedTwitterFriend"
+                           data-ng-class="{'error': (giftingForm.emailorphone.$dirty && giftingForm.emailorphone.$invalid)}"
+                           required/>
+                    <input type="text" name="twitter" class="textCtrl borderless"
+                           value="@{{vm.selectedTwitterFriend.screen_name}}"
+                           data-ng-if="vm.selectedTwitterFriend"
+                           disabled="disabled"/>
+                </div>
+            </div>
+
+            <div class="rw fluidHt">
+                <div class="lbl">Gift Message (optional)</div>
+                <div class="val">
+                    <textarea class="textCtrl ta borderless" data-ng-model="gifting.message" ></textarea>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- /.payWithCard -->
+    <div class="net">TOTAL <span class="val">
+    {{gifting.amount | currency:"$ ":2}}</span></div>
+    <div class="actn">
+        <button class="btn btn-success" data-ng-disabled="giftingForm.$invalid" data-ng-click="vm.sendGift()">Gift Now</button>
+        <div class="or">OR</div>
+        <button class="btn btn-submit alt" data-ng-disabled="giftingForm.amount.$invalid"
+                data-ng-click="vm.selectTwitterFriends()">
+            <span class="ico tw">Send to Friend</span>
+        </button>
+    </div>
+    <!-- /.actn -->
+
+</div>
+<!-- /.giftingWrap -->
+<div data-ng-include="'champion/send-gift/twitter-select.html'"></div>

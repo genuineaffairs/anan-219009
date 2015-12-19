@@ -1,0 +1,102 @@
+<!-- content -->
+<div class="containerWithAside">
+  <div class="home-list" data-infinite-scroll="loadMore()">
+    <h2 data-ng-bind="Home.title"></h2>
+    <h3 data-ng-bind="Home.subtitle"></h3>
+    <dl class="clearfix">
+      <dd>
+	<div data-ng-click="showInfo(item)" class="item clearfix" data-ng-repeat="item in giftCardOffers">
+	  <p class="item-logo-section"><img alt="Business Logo" src="../i/empty.gif" data-ng-src="{{item.businessPicture}}"/></p>
+	  <p data-ng-bind="item.businessName"></p>
+          <p>{{item.businessCity}}, {{item.businessState}}</p>
+	  <p class="item-info">
+	    <span>Activation :</span>
+	    <span data-ng-bind="item.activationDateTime | date:longDateFormat"></span>
+	  </p>
+	  <section class="details clearfix">
+	    <div class="left">
+	      <label class="sale">{{item.discount}}%</label>
+	      <span class="font-size14">OFF</span>
+	      <hr/>
+	      <label class="expiration">Offer ends {{item.expirationDate | timeRemaining:'short'}}</label>
+	    </div>
+	    <div class="left radial-progress" data-progress="{{item.availableQuantity}},{{item.totalQuantity}}">
+	      <div class="circle">
+		<div class="circle-gauge" data-ng-init="gauge = getGauge(item, null, 30)" data-ng-include="'partials/gauge.svg'"></div>
+	      </div>
+	      <div class="inset">
+		<div class="percentage">
+		  <p><span>$</span><span class="progress">{{item.availableQuantity}}</span></p>
+		  <p>remain</p>
+		</div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+
+      <div data-ng-click="clearSearch()" class="item clearfix" data-ng-if="showAlternativeOffers">
+	<p class="item-logo-section"><img alt="Load more results" src="../i/add.png"/></p>
+	<p>More</p>
+	<p>Load more interesting offers.</p>
+	<p class="item-info"><span>&nbsp;</span></p>
+	<section class="details clearfix">
+	    
+	</section>
+      </div>
+
+      <div data-ng-if="pause && giftCardOffers.length != totalRecords" class="load-more">
+	<div id="bowl-ring">
+	  <div class="ball-holder">
+	    <div class="ball">
+	    </div>
+	  </div>
+	</div>
+	<span>Loading more {{loadMoreItemCount}} gift cards [from {{totalRecords}}]</span>
+      </div>
+    </dd>
+  </dl>
+
+  <!-- show details card -->
+
+  <!-- end show details card -->
+
+  <!-- end content -->
+  <div class="login-panel" data-ng-if="startLogin">
+    <div class="login-form init-modal" data-ng-init="loginError=false">
+      <div class="content">
+	<h3>Login</h3>
+	<form>
+	  <input type="text" value="" placeholder="Username" data-ng-model="username" data-ng-class="{error:loginError}">
+	  <input type="password" value="" placeholder="Password" data-ng-model="password" data-ng-class="{error:loginError}">
+	  <p class="remember-forgot">
+	    <label>
+	      <input type="checkbox">
+	      <i></i>
+	      <span>Remember me</span>
+	    </label>
+	    <span class="forgot-pass"><a href="javascript:;">Forgot Password?</a></span>
+	  </p>
+	  <a href="javascript:;" class="btn-continue" data-ng-init="mocKUp=false" data-ng-click="mockUp=!mockUp">Continue</a>
+	  <!-- mock up role -->
+	  <ul class="mock-up" data-ng-show="mockUp">
+	    <li><a href="javascript:;" data-ng-click="login('champion', true)">Login as Champion</a></li>
+	    <li><a href="javascript:;" data-ng-click="login('founder', true)">Login as Founder</a></li>
+	    <li><a href="javascript:;" data-ng-click="login('employee', true)">Login as Platform Employee</a></li>
+	    <li><a href="javascript:;" data-ng-click="loginError=true; mockUp=false">Login Error</a></li>
+	  </ul>
+	  <!-- end mock up role -->
+	  <p>Don't have an account? <a href="javascript:;">Sign up now</a></p>
+	</form>
+	<span>or</span>
+      </div>
+      <div class="social">
+	<a href="javascript:;" class="face"><span class="icon-face"></span>Use My Facebook Account</a>
+	<a href="javascript:;" class="twitter"><span class="icon-twitter"></span>Use My Twitter Account</a>
+	<a href="javascript:;" class="linkedin"><span class="icon-linkedin"></span>Use My Linkedin Account</a>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  </div>
+  <div data-ng-include="'partials/module/howItWorksAside.html'"></div>
+</div>

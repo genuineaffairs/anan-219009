@@ -1,0 +1,63 @@
+<div class="container founder">
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+  <!-- End Aside -->
+  <div class="main status">
+  	<h2>Founder Status</h2>
+    <table>
+    	<thead>
+      	<tr>
+        	<th class="business">Business</th>
+          <th class="step">Step 1</th>
+          <th class="step">Verification fee is paid</th>
+          <th class="step">Verified</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      	<tr data-ng-repeat="founder in items">
+        	<td>
+          	<img src="../i/logo-business.png" data-ng-src="{{founder.picture}}" width="64" height="64" alt="Business" />
+            {{founder.name}}
+          </td>
+          <td>
+          	<label style="cursor: default">
+            	<input type="checkbox" onclick="return false" disabled="disabled"  data-ng-model="founder.step1st" />
+            	<span></span>
+            </label>
+          </td>
+          <td>
+          	<label style="cursor: default">
+            	<input type="checkbox" onclick="return false" disabled="disabled"  data-ng-model="founder.step2nd" />
+            	<span></span>
+            </label>
+          </td>
+          <td>
+          	<label style="cursor: default" data-ng-if="!founder.step2nd || founder.step3rd">
+            	<input type="checkbox" onclick="return false" disabled="disabled" data-ng-model="founder.isVerified" />
+            	<span></span>
+            </label>
+              <label data-ng-if="founder.step2nd && !founder.step3rd" data-ng-click="showModal(founder)">
+                  <input type="checkbox"  disabled="disabled"  />
+                  <span></span>
+              </label>
+          </td>
+          <td>
+          	<a href="javascript:;" class="btn btn-primary btn-pay" data-ng-class="{'active':founder.active}" data-ng-click="showHistory(founder.id)">Show Activities</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- End .main -->
+
+    <div class="modalBg" data-ng-class="{'on': modal}" data-ng-click="closeModal()"></div>
+    <div class="modal modal-post" data-ng-class="{'on': modal}">
+        <p>Are you sure you want to verify this business?</p>
+        <div class="button-group">
+            <a data-ng-click="verifyBusiness()" class="btn btn-secondary">Yes</a>
+            <a data-ng-click="closeModal()" class="btn btn-secondary">No</a>
+        </div>
+    </div>
+</div>
+<!-- End .container -->

@@ -1,0 +1,63 @@
+<div class="container employees">
+
+
+    <div ng-include="'partials/module/profile-aside.html'"></div>
+    
+  <!-- End Aside -->
+  <div class="main">
+  	<h2>My Employees</h2>
+    <div class="bar">
+    	View All Employees	<a href="javascript:;" class="btn btn-secondary" data-ng-click="add();">Add Employee</a>
+    </div>
+    <!-- End .bar -->
+    <div class="data">
+    	<form name="employeeForm" data-ng-submit="save()">
+        <table>
+          <thead>
+            <tr>
+              <th class="name">First Name</th>
+                <th class="name">Last Name</th>
+                <th class="name">Username</th>
+              <th class="password">Password</th>
+              <th>Options</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="employee in employeesList">
+              <td>
+                <span data-ng-hide="employee.flag">{{employee.firstName}}</span>
+                <input type="text" data-ng-model="employee.firstName" data-ng-show="employee.flag" data-ng-class="{'error':employee.nameEmpty}"
+                       maxlength="1024" data-ng-keyup="validateChange($index)" />
+              </td>
+                <td>
+                    <span data-ng-hide="employee.flag">{{employee.lastName}}</span>
+                    <input type="text" data-ng-model="employee.lastName" data-ng-show="employee.flag" data-ng-class="{'error':employee.lastNameEmpty}"
+                           maxlength="1024" data-ng-keyup="validateChange($index)"/>
+                </td>
+                <td>
+                    <span data-ng-hide="employee.flag">{{employee.username}}</span>
+                    <input type="text" data-ng-model="employee.username" data-ng-show="employee.flag" data-ng-class="{'error':employee.usernameEmpty}"
+                           maxlength="254" data-ng-keyup="validateChange($index)" />
+                </td>
+              <td>
+                <span data-ng-hide="employee.flag"></span>
+                <input type="password" data-ng-model="employee.password" data-ng-show="employee.flag"
+                       maxlength="1024" data-ng-keyup="validateChange($index)"
+		       placeholder="{{password.placeholder}}"
+		       data-ng-class="{'error':(employee.passwordEmpty && employee.isNew)}"/>
+              </td>
+              <td>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-hide="employee.flag" data-ng-click="update($index)">Modify</a>
+                <a href="javascript:;" class="btn btn-secondary" data-ng-show="employee.flag" data-ng-click="save($index)">Save</a>
+                <a href="javascript:;" class="btn btn-primary" data-ng-click="delete($index)">Delete</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  <!-- End .main -->
+  
+</div>
+<!-- End .container -->

@@ -1,0 +1,120 @@
+<!-- sign up champion account -->
+<div class="sign-up sign-up-champion" ng-show="!isTermsMode">
+    <div class="wrapper">
+        <div class="main-container">
+            <h2>CREATE AN ACCOUNT</h2>
+
+            <form name="signUpForm" data-ng-class="{error: showError}">
+                <!-- First Name , Last Name -->
+                <div class="form-group">
+                    <input id="firstName" name="firstName" placeholder="First Name"
+                           type="text" autocomplete="off" data-ng-model="firstName"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.firstName)}"
+                           required/>
+                    <input id="lastName" name="lastName" placeholder="Last Name"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.lastName)}"
+                           type="text" autocomplete="off" data-ng-model="lastName" required/>
+                </div>
+                <!--  email -->
+                <div class="form-group">
+                    <input id="mail" name="mail" type="email" placeholder="Email" autocomplete="off"
+                           data-ng-model="mail"
+                           data-ng-pattern="/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.mail)}"
+                           required/>
+                </div>
+                <!--  password -->
+                <div class="form-group">
+                    <input id="password" name="password" type="password" placeholder="Password"
+                           data-ng-model="password"
+                           data-ng-change="checkPassword()" data-ng-blur="checkPassword()"
+                           data-ng-class="{'invalid': isElementInvalid(signUpForm.password)}"
+                           data-ng-minlength="passwordLen" autocomplete="off" required/>
+                </div>
+
+
+                <!-- upload file  -->
+                <div class="form-group">
+                    <input id="uploadFile" data-ng-model="fileName"  class="selectedFile" data-ng-class="{'selectedFile':fileName}" type="text" placeholder="Upload Photo (Optional)" disabled="disabled"/>
+
+                    <div class="fileUpload btn btn-default btn-inactive">
+                        <span>Browse</span>
+                        <input id="uploadBtn" accept="image/*" capture="camera" type="file" class="upload"/>
+                    </div>
+                </div>
+
+		<!-- subscribe newsletter -->
+                <div class="accept-terms-group vertical-align-subs">
+                    <div data-ng-click="toggleSubscribeNewsletter();" data-ng-class="{checked:isSubscribeNewsletter}"
+                         class="icon check-box  vertical-align-subs">
+                        <div class="icon sprite sprite-blue-tick"></div>
+                    </div>
+                    <span class="term-info">Subscribe me to Founder$hare newsletters</span>
+                </div>
+
+                <!-- accept terms -->
+                <div class="accept-terms-group vertical-align-subs">
+                    <div data-ng-click="toggleAcceptTerms();" data-ng-class="{checked:isAcceptTerms}"
+                         class="icon check-box  vertical-align-subs">
+                        <div class="icon sprite sprite-blue-tick"></div>
+                    </div>
+                    <span class="term-info">I accept <a href="javascript:" ng-click="showTerms()">Terms & Conditions</a></span>
+                </div>
+                <!-- validate error message -->
+                <div class="error-info" data-ng-show="signUpForm.$error">
+                    <span ng-show="signUpForm.firstName.$touched && signUpForm.firstName.$error.required">
+                        First Name is required.<br>
+                    </span>
+                    <span ng-show="signUpForm.lastName.$touched && signUpForm.lastName.$error.required">
+                        Last Name is required.<br>
+                    </span>
+                    <span ng-show="signUpForm.mail.$touched">
+                        <span ng-show="signUpForm.mail.$error.required">
+                            Email Address is required.<br>
+                        </span>
+                        <span ng-show="signUpForm.mail.$error.pattern">
+                            Email Address is invalid.<br>
+                        </span>
+                    </span>
+                    <span ng-show="signUpForm.password.$touched">
+                        <span ng-show="signUpForm.password.$error.required">
+                            Password is required.<br>
+                        </span>
+                        <span ng-show="signUpForm.password.$error.minlength">
+                            The password must have "{{passwordLen}}" chars at least.<br>
+                        </span>
+                        <span ng-show="signUpForm.password.$error.badContent">
+                            The password must contain both numbers and chars.<br>
+                        </span>
+                    </span>
+                </div>
+                <!-- register button -->
+                <div class="controls">
+                    <input type="submit" class="hide">
+                    <a class="btn btn-medium btn-primary btn-register"
+                       data-ng-class="{'btn-disable':isDisableRegister()}"
+                       data-ng-disabled="isDisableRegister()" href data-ng-click="register(accountTypes.champion)">Register</a>
+                </div>
+            </form>
+
+            <div class="sprite sprite-shadow-hspliter"></div>
+            <!-- social media   -->
+            <div class="social-media-box">
+                <div>Or, register with Social Media</div>
+                <div class="social-media-groups">
+                    <!-- facebook -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.facebook, accountTypes.champion)" class="social-media sprite facebook-icon"> </a>
+                    <!-- twitter -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.twitter, accountTypes.champion)" class="social-media sprite twitter-icon"> </a>
+                    <!-- linkedin -->
+                    <a href data-ng-click="registerWithSocialNetwork(socialNetworks.linkedin, accountTypes.champion)" class="social-media sprite linkedin-icon"> </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- End .main-container -->
+    </div>
+</div>
+
+<ng-include src="'common/static/terms.html'" ng-show="isTermsMode"></ng-include>
+    

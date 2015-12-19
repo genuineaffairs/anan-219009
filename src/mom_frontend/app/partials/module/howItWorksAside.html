@@ -1,0 +1,23 @@
+<!-- aside -->
+<aside class="howItWorksAside" data-ng-controller="howItWorksCtrl">
+  <h3>What is FounderShare&reg;?</h3>
+  <iframe src="https://player.vimeo.com/video/136685790" width="280" height="167" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <div class="slide-show">
+    <h3>How It Works - An Overview</h3>
+    <div>
+      <a href="javascript:" class="prev" data-ng-click="prev()"></a>
+      <a href="javascript:" class="next" data-ng-click="next()"></a>
+      <ul class="slides">
+        <li data-ng-repeat="slide in slides" data-ng-show="$index == currentSlide" data-index="{{$index}}">
+          <img src="assets/i/works-slide-1.png" data-ng-src="{{::slide.slide}}" alt="Slide"/>
+          <p>{{::slide.text}}</p>
+        </li>
+      </ul>
+      <ul class="indicators">
+        <li data-ng-repeat="slide in slides" data-ng-class="{active: $index == currentSlide}"
+            data-ng-click="setCurrent($index)">
+      </ul>
+    </div>
+  </div>
+</aside>
+<!-- end aside -->
